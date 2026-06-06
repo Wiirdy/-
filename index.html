@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>وردي</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -10,313 +10,277 @@
 <style>
 :root{
   --pink:#ef6f9f;
-  --pink2:#ffb6ce;
-  --soft:#fff6f9;
-  --text:#6b4a4f;
-  --line:#f8d6e2;
+  --pink2:#ffd6e5;
+  --text:#76545a;
+  --soft:#fff8fb;
 }
+
 *{box-sizing:border-box}
+
 body{
   margin:0;
   min-height:100vh;
-  font-family:'Amiri', serif;
-  color:var(--text);
-  background:
-    radial-gradient(circle at 10% 20%, #fff 0 12%, transparent 30%),
-    linear-gradient(135deg,#ffe1ec,#fff8fb 45%,#ffd3e5);
   display:flex;
   justify-content:center;
   align-items:center;
   padding:28px;
+  font-family:'Amiri', serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top,#fff 0%,#ffeaf2 38%,#ffd7e6 100%);
 }
-.app{
-  width:min(470px,100%);
-  background:rgba(255,255,255,.72);
-  border:1px solid white;
-  border-radius:38px;
-  padding:28px 22px 20px;
-  box-shadow:0 25px 70px rgba(226,94,139,.25);
+
+.card{
+  width:min(520px,100%);
+  min-height:760px;
+  background:rgba(255,255,255,.78);
+  border-radius:42px;
+  padding:34px 30px 28px;
+  text-align:center;
+  box-shadow:0 30px 80px rgba(232,101,148,.23);
   position:relative;
   overflow:hidden;
 }
-.top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+
 .icon{
-  width:48px;height:48px;border-radius:50%;
-  background:rgba(255,255,255,.8);
-  display:grid;place-items:center;
-  box-shadow:0 8px 22px rgba(226,94,139,.14);
-  color:var(--pink);
-  font-size:23px;
-}
-.logo{
-  text-align:center;
-}
-.logoMark{
-  width:74px;height:74px;
-  border:2px solid var(--pink);
+  position:absolute;
+  top:48px;
+  width:54px;
+  height:54px;
   border-radius:50%;
-  margin:auto;
-  display:grid;place-items:center;
-  font-family:Georgia,serif;
-  font-size:44px;
+  background:rgba(255,255,255,.78);
+  display:grid;
+  place-items:center;
   color:var(--pink);
-  background:rgba(255,255,255,.45);
+  font-size:25px;
+  box-shadow:0 12px 30px rgba(232,101,148,.13);
 }
+
+.left{left:38px}
+.right{right:38px}
+
+.logo{
+  width:74px;
+  height:74px;
+  border-radius:50%;
+  border:2px solid var(--pink);
+  margin:0 auto 20px;
+  display:grid;
+  place-items:center;
+  font-family:Georgia,serif;
+  font-size:42px;
+  color:var(--pink);
+}
+
 h1{
   font-family:'Aref Ruqaa', serif;
+  margin:0;
   font-size:58px;
-  margin:10px 0 0;
+  line-height:1.1;
   color:var(--pink);
-  text-shadow:0 8px 25px rgba(239,111,159,.25);
+  text-shadow:0 12px 28px rgba(239,111,159,.22);
 }
-.sub{
-  font-size:20px;
-  margin-top:2px;
+
+.subtitle{
+  font-size:22px;
+  margin-top:8px;
 }
+
 .ring{
   --p:0deg;
-  width:245px;height:245px;
+  width:270px;
+  height:270px;
+  margin:40px auto 28px;
   border-radius:50%;
-  margin:28px auto 18px;
-  background:conic-gradient(var(--pink) var(--p), #ffe7ef 0);
-  padding:12px;
-  box-shadow:0 0 35px rgba(239,111,159,.18);
+  background:conic-gradient(var(--pink) var(--p), #ffe8f0 0);
+  padding:13px;
+  box-shadow:0 0 45px rgba(239,111,159,.18);
 }
-.ringInner{
-  width:100%;height:100%;
+
+.ring-inner{
+  width:100%;
+  height:100%;
   border-radius:50%;
-  background:rgba(255,255,255,.9);
+  background:rgba(255,255,255,.94);
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
 }
-.label{font-size:18px}
+
+.small{
+  font-size:22px;
+}
+
 .count{
   font-family:Georgia,serif;
-  font-size:72px;
+  font-size:82px;
   color:var(--pink);
   line-height:1;
 }
-.goal{font-size:20px}
-.mainBtn{
+
+.heart{
+  color:var(--pink);
+  font-size:24px;
+  margin-top:7px;
+}
+
+.main{
   width:100%;
   border:0;
   border-radius:999px;
-  padding:18px;
+  padding:20px;
+  font-family:'Aref Ruqaa', serif;
+  font-size:29px;
   color:white;
-  font-family:'Aref Ruqaa', serif;
-  font-size:27px;
-  background:linear-gradient(135deg,#ff9abe,#e9568c);
-  box-shadow:0 18px 35px rgba(239,111,159,.35);
+  background:linear-gradient(135deg,#ff9cc0,#e9578e);
+  box-shadow:0 18px 40px rgba(239,111,159,.35);
   cursor:pointer;
-  margin-top:10px;
   position:relative;
-  overflow:hidden;
 }
-.mainBtn:active{transform:scale(.98)}
+
+.main:active{
+  transform:scale(.98);
+}
+
 .note{
-  text-align:center;
-  margin:14px 0 20px;
-  font-size:17px;
+  margin:22px 0;
+  font-size:20px;
 }
-.title{
-  text-align:center;
-  font-family:'Aref Ruqaa', serif;
-  font-size:24px;
-  margin-bottom:13px;
-}
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-.dhikr{
-  border:1px solid #fff;
-  background:rgba(255,255,255,.7);
-  border-radius:21px;
-  padding:14px 8px;
-  font-family:'Amiri', serif;
-  font-size:18px;
-  color:var(--text);
-  box-shadow:0 8px 20px rgba(226,94,139,.09);
-  cursor:pointer;
-}
-.dhikr.active{
-  background:#fff0f6;
-  color:var(--pink);
-  border-color:var(--line);
-}
-.stats{
-  margin-top:17px;
-  display:flex;
-  background:rgba(255,255,255,.58);
-  border:1px solid white;
-  border-radius:26px;
-  overflow:hidden;
-}
-.stat{
-  flex:1;
-  text-align:center;
-  padding:18px 8px;
-}
-.stat:first-child{border-left:1px solid var(--line)}
-.num{
-  color:var(--pink);
-  font-family:Georgia,serif;
-  font-size:30px;
-}
+
 .reset{
   width:100%;
-  margin-top:15px;
-  border:1px solid var(--line);
+  padding:17px;
   border-radius:999px;
-  padding:13px;
-  background:rgba(255,255,255,.55);
-  color:#b25773;
-  font-family:'Amiri', serif;
-  font-size:18px;
+  border:1px solid #f5cbd9;
+  background:rgba(255,255,255,.58);
+  color:#a26470;
+  font-family:'Aref Ruqaa', serif;
+  font-size:23px;
   cursor:pointer;
 }
-.ayah{
-  text-align:center;
-  margin-top:18px;
+
+.bottom{
+  margin-top:24px;
   font-size:18px;
-  color:#9a6570;
+  color:#9b7078;
 }
+
 .petal{
-  position:absolute;
+  position:fixed;
   pointer-events:none;
-  font-size:22px;
-  animation:float 1.2s ease-out forwards;
+  font-size:24px;
+  animation:float 1.4s ease-out forwards;
+  z-index:999;
 }
+
 @keyframes float{
-  0%{opacity:1;transform:translate(0,0) scale(.7) rotate(0)}
-  100%{opacity:0;transform:translate(var(--x),-120px) scale(1.4) rotate(35deg)}
+  0%{opacity:1; transform:translate(0,0) scale(.7) rotate(0deg)}
+  100%{opacity:0; transform:translate(var(--x),-130px) scale(1.4) rotate(40deg)}
+}
+
+.bg-petal{
+  position:absolute;
+  color:#ffc3d8;
+  opacity:.45;
+  font-size:30px;
+  animation:slow 6s ease-in-out infinite alternate;
+}
+
+.p1{top:250px;right:55px}
+.p2{top:390px;left:70px}
+.p3{bottom:150px;right:60px}
+
+@keyframes slow{
+  from{transform:translateY(0) rotate(0)}
+  to{transform:translateY(-18px) rotate(12deg)}
 }
 </style>
 </head>
 
 <body>
-<div class="app">
-  <div class="top">
-    <div class="icon">☼</div>
-    <div class="logo">
-      <div class="logoMark">W</div>
-      <h1>وردي</h1>
-      <div class="sub">وردك اليومي إلى 1000</div>
-    </div>
-    <div class="icon">☾</div>
-  </div>
+
+<div class="card">
+  <div class="icon left">☾</div>
+  <div class="icon right">☼</div>
+
+  <div class="bg-petal p1">🌸</div>
+  <div class="bg-petal p2">🌸</div>
+  <div class="bg-petal p3">🌸</div>
+
+  <div class="logo">W</div>
+
+  <h1>وردي</h1>
+  <div class="subtitle">وردك اليومي إلى 1000</div>
 
   <div class="ring" id="ring">
-    <div class="ringInner">
-      <div class="label">العدد</div>
+    <div class="ring-inner">
+      <div class="small">العدد</div>
       <div class="count" id="count">0</div>
-      <div class="goal">من 1000</div>
-      <div>♥</div>
+      <div class="small">من 1000</div>
+      <div class="heart">♥</div>
     </div>
   </div>
 
-  <button class="mainBtn" id="mainBtn" onclick="addDhikr(event)">سبحان الله</button>
+  <button class="main" onclick="addDhikr(event)">سبحان الله</button>
 
   <div class="note">✦ كل تسبيحة تزرع لك نورًا في قلبك ✦</div>
 
-  <div class="title">اختر ذكرك</div>
-
-  <div class="grid">
-    <button class="dhikr active" onclick="chooseDhikr(this)">سبحان الله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)">الحمد لله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)">لا إله إلا الله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)">الله أكبر</button>
-    <button class="dhikr" onclick="chooseDhikr(this)">استغفر الله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)">اللهم صل وسلم على نبينا محمد</button>
-  </div>
-
-  <div class="stats">
-    <div class="stat">
-      <div>إجمالي الأذكار</div>
-      <div class="num" id="total">0</div>
-      <div>تسبيحة</div>
-    </div>
-    <div class="stat">
-      <div>الهدف اليومي</div>
-      <div class="num">1000</div>
-      <div>تسبيحة</div>
-    </div>
-  </div>
-
   <button class="reset" onclick="resetCounter()">إعادة التصفير ↻</button>
 
-  <div class="ayah">﴿فاذكروني أذكركم واشكروا لي ولا تكفرون﴾ ♥</div>
+  <div class="bottom">استمري، فكل خطوة تقربك من نور لا ينطفئ 💗</div>
 </div>
 
 <script>
 let count = Number(localStorage.getItem("wirdiCount")) || 0;
-let total = Number(localStorage.getItem("wirdiTotal")) || 0;
-let currentDhikr = localStorage.getItem("currentDhikr") || "سبحان الله";
 
 const countEl = document.getElementById("count");
-const totalEl = document.getElementById("total");
 const ring = document.getElementById("ring");
-const mainBtn = document.getElementById("mainBtn");
 
-mainBtn.innerText = currentDhikr;
 updateUI();
 
 function addDhikr(e){
   if(count < 1000){
     count++;
-    total++;
     localStorage.setItem("wirdiCount", count);
-    localStorage.setItem("wirdiTotal", total);
     updateUI();
     makePetals(e);
   }
-  if(count === 1000){
-    mainBtn.innerText = "اكتمل وردك اليومي 🌸";
-  }
-}
 
-function updateUI(){
-  countEl.innerText = count;
-  totalEl.innerText = total.toLocaleString();
-  let deg = Math.min(count / 1000 * 360, 360);
-  ring.style.setProperty("--p", deg + "deg");
+  if(count === 1000){
+    document.querySelector(".main").innerText = "اكتمل وردك اليومي 🌸";
+  }
 }
 
 function resetCounter(){
   count = 0;
   localStorage.setItem("wirdiCount", 0);
-  mainBtn.innerText = currentDhikr;
+  document.querySelector(".main").innerText = "سبحان الله";
   updateUI();
 }
 
-function chooseDhikr(btn){
-  document.querySelectorAll(".dhikr").forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-  currentDhikr = btn.innerText;
-  localStorage.setItem("currentDhikr", currentDhikr);
-  mainBtn.innerText = currentDhikr;
+function updateUI(){
+  countEl.innerText = count;
+  let deg = Math.min(count / 1000 * 360, 360);
+  ring.style.setProperty("--p", deg + "deg");
 }
 
 function makePetals(e){
   const symbols = ["🌸","🌷","♡","✦"];
-  for(let i=0;i<8;i++){
+
+  for(let i=0; i<10; i++){
     const petal = document.createElement("span");
     petal.className = "petal";
     petal.innerText = symbols[Math.floor(Math.random()*symbols.length)];
     petal.style.left = e.clientX + "px";
     petal.style.top = e.clientY + "px";
-    petal.style.setProperty("--x", (Math.random()*120-60) + "px");
+    petal.style.setProperty("--x", (Math.random()*160-80) + "px");
     document.body.appendChild(petal);
-    setTimeout(()=>petal.remove(),1200);
+
+    setTimeout(() => petal.remove(), 1400);
   }
 }
 </script>
+
 </body>
 </html>
