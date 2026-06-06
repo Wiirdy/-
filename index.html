@@ -4,16 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>وردي</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --pink:#F47DAA;
   --deep:#D85A8D;
+  --soft:#FFF8FB;
   --light:#FFE3EE;
   --text:#7A5A61;
+  --white:rgba(255,255,255,.78);
 }
+
 *{box-sizing:border-box}
+
 body{
   margin:0;
   min-height:100vh;
@@ -23,11 +28,22 @@ body{
   padding:24px;
   font-family:'Amiri',serif;
   color:var(--text);
-  background:radial-gradient(circle at top,#fff 0%,#fff8fb 35%,#ffe3ee 100%);
+  background:
+    radial-gradient(circle at top,#fff 0%,#fff8fb 35%,#ffe3ee 100%);
+  transition:.4s;
 }
+
+body.dark{
+  --soft:#2D2430;
+  --light:#5d3a4d;
+  --text:#F7DCE7;
+  background:
+    radial-gradient(circle at top,#5c3b52 0%,#2d2430 70%);
+}
+
 .card{
   width:min(560px,100%);
-  background:rgba(255,255,255,.78);
+  background:var(--white);
   border-radius:42px;
   padding:32px 28px 28px;
   text-align:center;
@@ -35,6 +51,12 @@ body{
   position:relative;
   overflow:hidden;
 }
+
+body.dark .card{
+  background:rgba(54,42,58,.86);
+  box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
 .topBtn{
   position:absolute;
   top:34px;
@@ -48,8 +70,21 @@ body{
   cursor:pointer;
   box-shadow:0 10px 25px rgba(216,90,141,.13);
 }
-.moon{left:34px;background:linear-gradient(145deg,#ffe2ee,#fff)}
+
+body.dark .topBtn{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.18);
+}
+
+.moon{left:34px;color:#E84F88}
 .sound{right:34px}
+
+.sound small{
+  display:block;
+  font-size:10px;
+  line-height:1;
+  margin-top:-4px;
+}
 
 .tasbeeh{
   width:140px;
@@ -57,6 +92,7 @@ body{
   margin:0 auto 10px;
   position:relative;
 }
+
 .bead{
   position:absolute;
   width:16px;
@@ -68,18 +104,37 @@ body{
   top:52px;
   transform:rotate(calc(var(--i)*20deg)) translateY(-52px);
 }
+
+/* الوردة صارت أنعم وأصغر */
 .rose{
   position:absolute;
-  right:22px;
-  top:62px;
-  width:34px;
-  height:34px;
+  right:26px;
+  top:70px;
+  width:25px;
+  height:25px;
   border-radius:50%;
   background:
-    radial-gradient(circle,#ffd7e8 0 20%,transparent 21%),
-    conic-gradient(from 0deg,#f8b6cd,#fff1f6,#f49abb,#fff1f6,#f8b6cd);
-  opacity:.82;
+    radial-gradient(circle,#ffdce9 0 18%,transparent 19%),
+    conic-gradient(from 0deg,#f6a9c4,#fff1f6,#f8bfd3,#fff1f6,#f6a9c4);
+  opacity:.72;
+  box-shadow:0 4px 10px rgba(216,90,141,.12);
 }
+
+.rose::before,
+.rose::after{
+  content:"";
+  position:absolute;
+  width:12px;
+  height:7px;
+  background:#b7b98d;
+  border-radius:50%;
+  opacity:.45;
+  top:13px;
+}
+
+.rose::before{right:-7px;transform:rotate(-25deg)}
+.rose::after{left:-7px;transform:rotate(25deg)}
+
 .tasselHeart{
   position:absolute;
   left:50%;
@@ -88,6 +143,7 @@ body{
   color:var(--deep);
   font-size:28px;
 }
+
 .tassel{
   position:absolute;
   left:50%;
@@ -103,12 +159,16 @@ body{
 
 h1{
   font-family:'Aref Ruqaa',serif;
-  font-size:64px;
+  font-size:67px;
   line-height:1.05;
   color:var(--deep);
   margin:0;
 }
-.subtitle{font-size:22px;margin-top:8px}
+
+.subtitle{
+  font-size:22px;
+  margin-top:8px;
+}
 
 .ring{
   --p:0deg;
@@ -120,6 +180,7 @@ h1{
   background:conic-gradient(var(--pink) var(--p), #ffe9f1 0);
   box-shadow:0 0 45px rgba(244,125,170,.18);
 }
+
 .ringInner{
   width:100%;
   height:100%;
@@ -130,13 +191,20 @@ h1{
   align-items:center;
   justify-content:center;
 }
+
+body.dark .ringInner{
+  background:rgba(255,255,255,.08);
+}
+
 .label,.goal{font-size:22px}
+
 .count{
   font-family:Georgia,serif;
   font-size:82px;
   color:var(--deep);
   line-height:1;
 }
+
 .mainBtn{
   width:100%;
   border:0;
@@ -149,14 +217,23 @@ h1{
   box-shadow:0 18px 40px rgba(216,90,141,.34);
   cursor:pointer;
 }
+
 .mainBtn:active{transform:scale(.98)}
-.dua{margin:19px 0 22px;font-size:21px;color:#946872}
+
+.dua{
+  margin:19px 0 22px;
+  font-size:21px;
+  color:#946872;
+}
+
+body.dark .dua{color:#f7dce7}
 
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
 }
+
 .dhikr{
   border:1px solid #f8cdda;
   background:rgba(255,255,255,.68);
@@ -167,16 +244,24 @@ h1{
   font-size:19px;
   cursor:pointer;
 }
+
+body.dark .dhikr{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.15);
+}
+
 .dhikr.active{
   background:#fff0f6;
   color:var(--deep);
   border-color:#f4a7c4;
 }
+
 .actions{
   display:flex;
   gap:12px;
   margin-top:18px;
 }
+
 .actionBtn{
   flex:1;
   border:1px solid #f5cbd9;
@@ -188,7 +273,14 @@ h1{
   font-size:20px;
   cursor:pointer;
 }
-.complete{
+
+body.dark .actionBtn{
+  background:rgba(255,255,255,.08);
+  color:#f7dce7;
+  border-color:rgba(255,255,255,.16);
+}
+
+.complete,.statsBox{
   display:none;
   margin-top:17px;
   padding:16px;
@@ -198,6 +290,12 @@ h1{
   font-family:'Aref Ruqaa',serif;
   font-size:23px;
 }
+
+body.dark .complete,
+body.dark .statsBox{
+  background:rgba(255,255,255,.08);
+}
+
 .petal{
   position:fixed;
   width:12px;
@@ -205,20 +303,48 @@ h1{
   background:#ffd7e8;
   border-radius:12px 12px 12px 2px;
   pointer-events:none;
-  animation:float 1.2s ease-out forwards;
+  animation:float 1.25s ease-out forwards;
   z-index:999;
 }
+
 @keyframes float{
   0%{opacity:1;transform:translate(0,0) scale(.7) rotate(0)}
   100%{opacity:0;transform:translate(var(--x),-115px) scale(1.25) rotate(80deg)}
+}
+
+.bgPetal{
+  position:absolute;
+  width:32px;
+  height:48px;
+  border-radius:70% 30% 70% 30%;
+  background:linear-gradient(135deg,#ffd6e5,#fff2f7);
+  opacity:.55;
+  filter:blur(.2px);
+  animation:slow 6s ease-in-out infinite alternate;
+}
+
+.p1{left:55px;top:210px;transform:rotate(30deg)}
+.p2{right:70px;top:260px;transform:rotate(-25deg)}
+.p3{left:75px;top:420px;transform:rotate(-15deg)}
+.p4{right:45px;top:510px;transform:rotate(25deg)}
+
+@keyframes slow{
+  from{margin-top:0}
+  to{margin-top:-16px}
 }
 </style>
 </head>
 
 <body>
 <div class="card">
-  <button class="topBtn moon">☾</button>
-  <button class="topBtn sound" id="soundBtn" onclick="toggleSound()">🔊</button>
+
+  <button class="topBtn moon" id="themeBtn" onclick="toggleTheme()">☾</button>
+  <button class="topBtn sound" id="soundBtn" onclick="toggleSound()">🔊<small>ON</small></button>
+
+  <div class="bgPetal p1"></div>
+  <div class="bgPetal p2"></div>
+  <div class="bgPetal p3"></div>
+  <div class="bgPetal p4"></div>
 
   <div class="tasbeeh">
     <span class="bead" style="--i:0"></span><span class="bead" style="--i:1"></span>
@@ -261,44 +387,56 @@ h1{
   </div>
 
   <div class="actions">
+    <button class="actionBtn" onclick="showStats()">إحصائياتي</button>
     <button class="actionBtn" onclick="resetCounter()">إعادة التصفير ↻</button>
-    <button class="actionBtn">إحصائياتي</button>
   </div>
 
+  <div class="statsBox" id="statsBox"></div>
   <div class="complete" id="completeBox">🌷<br>ما شاء الله<br>اكتمل وردك اليومي<br>1000 / 1000</div>
+
 </div>
 
 <script>
 let count = Number(localStorage.getItem("wirdiCount")) || 0;
+let total = Number(localStorage.getItem("wirdiTotal")) || 0;
 let currentDhikr = localStorage.getItem("wirdiDhikr") || "سبحان الله";
 let soundOn = localStorage.getItem("wirdiSound") !== "off";
+let theme = localStorage.getItem("wirdiTheme") || "light";
 let audioCtx;
 
 const countEl = document.getElementById("count");
 const ring = document.getElementById("ring");
 const mainBtn = document.getElementById("mainBtn");
 const soundBtn = document.getElementById("soundBtn");
+const themeBtn = document.getElementById("themeBtn");
 const completeBox = document.getElementById("completeBox");
+const statsBox = document.getElementById("statsBox");
 
 mainBtn.innerText = currentDhikr;
+applyTheme();
 updateUI();
 updateSoundIcon();
 
 function addDhikr(e){
   if(count < 1000){
     count++;
+    total++;
     localStorage.setItem("wirdiCount", count);
+    localStorage.setItem("wirdiTotal", total);
     updateUI();
     makePetals(e);
-    playSoftTap();
+    playSoftSound();
   }
-  if(count === 1000) completeBox.style.display = "block";
+  if(count === 1000){
+    completeBox.style.display = "block";
+  }
 }
 
 function resetCounter(){
   count = 0;
   localStorage.setItem("wirdiCount", 0);
   completeBox.style.display = "none";
+  statsBox.style.display = "none";
   updateUI();
 }
 
@@ -323,28 +461,48 @@ function toggleSound(){
 }
 
 function updateSoundIcon(){
-  soundBtn.innerText = soundOn ? "🔊" : "🔇";
+  soundBtn.innerHTML = soundOn ? "🔊<small>ON</small>" : "🔇<small>OFF</small>";
 }
 
-function playSoftTap(){
+function toggleTheme(){
+  theme = theme === "light" ? "dark" : "light";
+  localStorage.setItem("wirdiTheme", theme);
+  applyTheme();
+}
+
+function applyTheme(){
+  document.body.classList.toggle("dark", theme === "dark");
+  themeBtn.innerText = theme === "dark" ? "☀" : "☾";
+}
+
+function showStats(){
+  statsBox.style.display = statsBox.style.display === "block" ? "none" : "block";
+  statsBox.innerHTML =
+    "إجمالي أذكارك: " + total.toLocaleString() + "<br>" +
+    "ورد اليوم: " + count + " / 1000";
+}
+
+function playSoftSound(){
   if(!soundOn) return;
+
   audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+
   const now = audioCtx.currentTime;
   const osc = audioCtx.createOscillator();
   const gain = audioCtx.createGain();
 
   osc.type = "sine";
-  osc.frequency.setValueAtTime(620, now);
-  osc.frequency.exponentialRampToValueAtTime(420, now + .12);
+  osc.frequency.setValueAtTime(720, now);
+  osc.frequency.exponentialRampToValueAtTime(520, now + .11);
 
   gain.gain.setValueAtTime(.0001, now);
-  gain.gain.exponentialRampToValueAtTime(.035, now + .01);
-  gain.gain.exponentialRampToValueAtTime(.0001, now + .18);
+  gain.gain.exponentialRampToValueAtTime(.025, now + .012);
+  gain.gain.exponentialRampToValueAtTime(.0001, now + .22);
 
   osc.connect(gain);
   gain.connect(audioCtx.destination);
   osc.start(now);
-  osc.stop(now + .2);
+  osc.stop(now + .24);
 }
 
 function makePetals(e){
@@ -355,7 +513,7 @@ function makePetals(e){
     p.style.top=e.clientY+"px";
     p.style.setProperty("--x",(Math.random()*130-65)+"px");
     document.body.appendChild(p);
-    setTimeout(()=>p.remove(),1200);
+    setTimeout(()=>p.remove(),1250);
   }
 }
 </script>
