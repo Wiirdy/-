@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>وردي</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -12,106 +11,115 @@
   --pink:#F47DAA;
   --deep:#D85A8D;
   --light:#FFE3EE;
-  --bg:#FFF8FB;
   --text:#7A5A61;
 }
-
 *{box-sizing:border-box}
-
 body{
   margin:0;
   min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:26px;
-  font-family:'Amiri', serif;
+  padding:24px;
+  font-family:'Amiri',serif;
   color:var(--text);
-  background:
-    radial-gradient(circle at top,#fff 0%,#fff8fb 35%,#ffe3ee 100%);
+  background:radial-gradient(circle at top,#fff 0%,#fff8fb 35%,#ffe3ee 100%);
 }
-
 .card{
-  width:min(520px,100%);
+  width:min(560px,100%);
   background:rgba(255,255,255,.78);
   border-radius:42px;
-  padding:34px 28px 28px;
+  padding:32px 28px 28px;
   text-align:center;
   box-shadow:0 30px 80px rgba(216,90,141,.22);
   position:relative;
   overflow:hidden;
 }
-
-.themeBtn{
+.topBtn{
   position:absolute;
   top:34px;
-  left:34px;
-  width:48px;
-  height:48px;
-  border:0;
+  width:58px;
+  height:58px;
+  border:1px solid #ffd0df;
   border-radius:50%;
-  background:rgba(255,255,255,.8);
-  color:var(--pink);
-  font-size:22px;
+  background:rgba(255,255,255,.72);
+  color:var(--deep);
+  font-size:25px;
   cursor:pointer;
-  box-shadow:0 10px 25px rgba(216,90,141,.12);
+  box-shadow:0 10px 25px rgba(216,90,141,.13);
 }
+.moon{left:34px;background:linear-gradient(145deg,#ffe2ee,#fff)}
+.sound{right:34px}
 
-.logo{
-  width:92px;
-  height:92px;
-  margin:4px auto 14px;
+.tasbeeh{
+  width:140px;
+  height:170px;
+  margin:0 auto 10px;
   position:relative;
 }
-
 .bead{
   position:absolute;
-  width:9px;
-  height:9px;
+  width:16px;
+  height:16px;
   border-radius:50%;
-  background:var(--pink);
-  opacity:.75;
-  left:50%;
-  top:50%;
-  transform:
-    rotate(calc(var(--i) * 24deg))
-    translateY(-38px);
+  background:radial-gradient(circle at 35% 30%,#fff,#ff9ec1 45%,#d85a8d 100%);
+  box-shadow:0 3px 8px rgba(216,90,141,.22);
+  left:62px;
+  top:52px;
+  transform:rotate(calc(var(--i)*20deg)) translateY(-52px);
 }
-
-.logoHeart{
+.rose{
   position:absolute;
-  bottom:0;
+  right:22px;
+  top:62px;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle,#ffd7e8 0 20%,transparent 21%),
+    conic-gradient(from 0deg,#f8b6cd,#fff1f6,#f49abb,#fff1f6,#f8b6cd);
+  opacity:.82;
+}
+.tasselHeart{
+  position:absolute;
   left:50%;
+  top:113px;
   transform:translateX(-50%);
   color:var(--deep);
-  font-size:20px;
+  font-size:28px;
+}
+.tassel{
+  position:absolute;
+  left:50%;
+  top:140px;
+  transform:translateX(-50%);
+  width:18px;
+  height:24px;
+  background:linear-gradient(#f7a4c3,#d85a8d);
+  clip-path:polygon(35% 0,65% 0,100% 100%,0 100%);
+  border-radius:0 0 12px 12px;
+  opacity:.75;
 }
 
 h1{
-  font-family:'Aref Ruqaa', serif;
-  font-size:60px;
-  line-height:1.1;
+  font-family:'Aref Ruqaa',serif;
+  font-size:64px;
+  line-height:1.05;
   color:var(--deep);
   margin:0;
-  text-shadow:0 12px 28px rgba(244,125,170,.18);
 }
-
-.subtitle{
-  font-size:21px;
-  margin-top:7px;
-}
+.subtitle{font-size:22px;margin-top:8px}
 
 .ring{
   --p:0deg;
-  width:268px;
-  height:268px;
-  margin:34px auto 24px;
+  width:270px;
+  height:270px;
+  margin:30px auto 24px;
   border-radius:50%;
   padding:13px;
   background:conic-gradient(var(--pink) var(--p), #ffe9f1 0);
   box-shadow:0 0 45px rgba(244,125,170,.18);
 }
-
 .ringInner{
   width:100%;
   height:100%;
@@ -122,160 +130,109 @@ h1{
   align-items:center;
   justify-content:center;
 }
-
-.label{
-  font-size:22px;
-}
-
+.label,.goal{font-size:22px}
 .count{
-  font-family:Georgia, serif;
+  font-family:Georgia,serif;
   font-size:82px;
   color:var(--deep);
   line-height:1;
 }
-
-.goal{
-  font-size:21px;
-}
-
 .mainBtn{
   width:100%;
   border:0;
   border-radius:999px;
-  padding:19px;
-  font-family:'Aref Ruqaa', serif;
-  font-size:29px;
+  padding:20px;
+  font-family:'Aref Ruqaa',serif;
+  font-size:32px;
   color:white;
   background:linear-gradient(135deg,#ff9cc2,var(--deep));
   box-shadow:0 18px 40px rgba(216,90,141,.34);
   cursor:pointer;
 }
+.mainBtn:active{transform:scale(.98)}
+.dua{margin:19px 0 22px;font-size:21px;color:#946872}
 
-.mainBtn:active{
-  transform:scale(.98);
-}
-
-.dua{
-  margin:20px 0 22px;
-  font-size:20px;
-  color:#946872;
-}
-
-.dhikrGrid{
+.grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:11px;
-  margin-bottom:16px;
+  gap:12px;
 }
-
-.dhikrBtn{
+.dhikr{
   border:1px solid #f8cdda;
   background:rgba(255,255,255,.68);
   color:var(--text);
   border-radius:20px;
   padding:13px 8px;
-  font-family:'Amiri', serif;
-  font-size:18px;
+  font-family:'Amiri',serif;
+  font-size:19px;
   cursor:pointer;
-  box-shadow:0 8px 18px rgba(216,90,141,.08);
 }
-
-.dhikrBtn.active{
+.dhikr.active{
   background:#fff0f6;
   color:var(--deep);
   border-color:#f4a7c4;
 }
-
-.reset{
-  width:100%;
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+}
+.actionBtn{
+  flex:1;
   border:1px solid #f5cbd9;
-  background:rgba(255,255,255,.6);
+  background:rgba(255,255,255,.62);
   color:#a26470;
   border-radius:999px;
-  padding:15px;
-  font-family:'Aref Ruqaa', serif;
-  font-size:22px;
+  padding:13px;
+  font-family:'Aref Ruqaa',serif;
+  font-size:20px;
   cursor:pointer;
 }
-
 .complete{
   display:none;
-  margin-top:18px;
-  padding:18px;
-  border-radius:26px;
-  background:rgba(255,240,246,.9);
+  margin-top:17px;
+  padding:16px;
+  border-radius:24px;
+  background:#fff0f6;
   color:var(--deep);
-  font-family:'Aref Ruqaa', serif;
-  font-size:24px;
+  font-family:'Aref Ruqaa',serif;
+  font-size:23px;
 }
-
 .petal{
   position:fixed;
   width:12px;
   height:18px;
-  background:var(--light);
+  background:#ffd7e8;
   border-radius:12px 12px 12px 2px;
   pointer-events:none;
   animation:float 1.2s ease-out forwards;
   z-index:999;
 }
-
 @keyframes float{
-  0%{opacity:1; transform:translate(0,0) scale(.7) rotate(0deg)}
-  100%{opacity:0; transform:translate(var(--x),-110px) scale(1.25) rotate(80deg)}
-}
-
-.dark{
-  --bg:#2D2430;
-  --text:#F7DCE7;
-  --light:#6B4659;
-  background:
-    radial-gradient(circle at top,#473247 0%,#2d2430 70%);
-}
-
-.dark .card{
-  background:rgba(54,42,58,.82);
-  box-shadow:0 30px 80px rgba(0,0,0,.25);
-}
-
-.dark .ringInner,
-.dark .dhikrBtn,
-.dark .reset,
-.dark .themeBtn{
-  background:rgba(255,255,255,.08);
-}
-
-.dark .subtitle,
-.dark .dua,
-.dark .label,
-.dark .goal{
-  color:#f7dce7;
+  0%{opacity:1;transform:translate(0,0) scale(.7) rotate(0)}
+  100%{opacity:0;transform:translate(var(--x),-115px) scale(1.25) rotate(80deg)}
 }
 </style>
 </head>
 
 <body>
-
 <div class="card">
-  <button class="themeBtn" onclick="toggleTheme()" id="themeBtn">🌙</button>
+  <button class="topBtn moon">☾</button>
+  <button class="topBtn sound" id="soundBtn" onclick="toggleSound()">🔊</button>
 
-  <div class="logo">
-    <span class="bead" style="--i:0"></span>
-    <span class="bead" style="--i:1"></span>
-    <span class="bead" style="--i:2"></span>
-    <span class="bead" style="--i:3"></span>
-    <span class="bead" style="--i:4"></span>
-    <span class="bead" style="--i:5"></span>
-    <span class="bead" style="--i:6"></span>
-    <span class="bead" style="--i:7"></span>
-    <span class="bead" style="--i:8"></span>
-    <span class="bead" style="--i:9"></span>
-    <span class="bead" style="--i:10"></span>
-    <span class="bead" style="--i:11"></span>
-    <span class="bead" style="--i:12"></span>
-    <span class="bead" style="--i:13"></span>
-    <span class="bead" style="--i:14"></span>
-    <div class="logoHeart">♥</div>
+  <div class="tasbeeh">
+    <span class="bead" style="--i:0"></span><span class="bead" style="--i:1"></span>
+    <span class="bead" style="--i:2"></span><span class="bead" style="--i:3"></span>
+    <span class="bead" style="--i:4"></span><span class="bead" style="--i:5"></span>
+    <span class="bead" style="--i:6"></span><span class="bead" style="--i:7"></span>
+    <span class="bead" style="--i:8"></span><span class="bead" style="--i:9"></span>
+    <span class="bead" style="--i:10"></span><span class="bead" style="--i:11"></span>
+    <span class="bead" style="--i:12"></span><span class="bead" style="--i:13"></span>
+    <span class="bead" style="--i:14"></span><span class="bead" style="--i:15"></span>
+    <span class="bead" style="--i:16"></span><span class="bead" style="--i:17"></span>
+    <div class="rose"></div>
+    <div class="tasselHeart">♥</div>
+    <div class="tassel"></div>
   </div>
 
   <h1>وردي</h1>
@@ -286,46 +243,46 @@ h1{
       <div class="label">العدد</div>
       <div class="count" id="count">0</div>
       <div class="goal">من 1000</div>
+      <div style="color:var(--deep);font-size:24px">♥</div>
     </div>
   </div>
 
-  <button class="mainBtn" onclick="addDhikr(event)" id="mainBtn">سبحان الله</button>
+  <button class="mainBtn" id="mainBtn" onclick="addDhikr(event)">سبحان الله</button>
 
-  <div class="dua">🤍 اللهم اجعل هذا اليوم مليئًا بذكرك ورضاك</div>
+  <div class="dua">اللهم اجعل هذا اليوم مليئًا بذكرك ورضاك</div>
 
-  <div class="dhikrGrid">
-    <button class="dhikrBtn active" onclick="chooseDhikr(this)">سبحان الله</button>
-    <button class="dhikrBtn" onclick="chooseDhikr(this)">الحمد لله</button>
-    <button class="dhikrBtn" onclick="chooseDhikr(this)">لا إله إلا الله</button>
-    <button class="dhikrBtn" onclick="chooseDhikr(this)">الله أكبر</button>
-    <button class="dhikrBtn" onclick="chooseDhikr(this)">أستغفر الله</button>
-    <button class="dhikrBtn" onclick="chooseDhikr(this)">اللهم صل وسلم على نبينا محمد ﷺ</button>
+  <div class="grid">
+    <button class="dhikr active" onclick="chooseDhikr(this)">سبحان الله</button>
+    <button class="dhikr" onclick="chooseDhikr(this)">الحمد لله</button>
+    <button class="dhikr" onclick="chooseDhikr(this)">لا إله إلا الله</button>
+    <button class="dhikr" onclick="chooseDhikr(this)">الله أكبر</button>
+    <button class="dhikr" onclick="chooseDhikr(this)">أستغفر الله</button>
+    <button class="dhikr" onclick="chooseDhikr(this)">اللهم صل وسلم على نبينا محمد ﷺ</button>
   </div>
 
-  <button class="reset" onclick="resetCounter()">إعادة التصفير ↻</button>
-
-  <div class="complete" id="completeBox">
-    🌷<br>
-    ما شاء الله<br>
-    اكتمل وردك اليومي<br>
-    1000 / 1000
+  <div class="actions">
+    <button class="actionBtn" onclick="resetCounter()">إعادة التصفير ↻</button>
+    <button class="actionBtn">إحصائياتي</button>
   </div>
+
+  <div class="complete" id="completeBox">🌷<br>ما شاء الله<br>اكتمل وردك اليومي<br>1000 / 1000</div>
 </div>
 
 <script>
 let count = Number(localStorage.getItem("wirdiCount")) || 0;
 let currentDhikr = localStorage.getItem("wirdiDhikr") || "سبحان الله";
-let theme = localStorage.getItem("wirdiTheme") || "light";
+let soundOn = localStorage.getItem("wirdiSound") !== "off";
+let audioCtx;
 
 const countEl = document.getElementById("count");
 const ring = document.getElementById("ring");
 const mainBtn = document.getElementById("mainBtn");
+const soundBtn = document.getElementById("soundBtn");
 const completeBox = document.getElementById("completeBox");
-const themeBtn = document.getElementById("themeBtn");
 
 mainBtn.innerText = currentDhikr;
-applyTheme();
 updateUI();
+updateSoundIcon();
 
 function addDhikr(e){
   if(count < 1000){
@@ -333,22 +290,20 @@ function addDhikr(e){
     localStorage.setItem("wirdiCount", count);
     updateUI();
     makePetals(e);
+    playSoftTap();
   }
-
-  if(count === 1000){
-    completeBox.style.display = "block";
-  }
+  if(count === 1000) completeBox.style.display = "block";
 }
 
 function resetCounter(){
   count = 0;
-  localStorage.setItem("wirdiCount", count);
+  localStorage.setItem("wirdiCount", 0);
   completeBox.style.display = "none";
   updateUI();
 }
 
 function chooseDhikr(btn){
-  document.querySelectorAll(".dhikrBtn").forEach(b => b.classList.remove("active"));
+  document.querySelectorAll(".dhikr").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
   currentDhikr = btn.innerText;
   localStorage.setItem("wirdiDhikr", currentDhikr);
@@ -357,35 +312,52 @@ function chooseDhikr(btn){
 
 function updateUI(){
   countEl.innerText = count;
-  let deg = Math.min(count / 1000 * 360, 360);
-  ring.style.setProperty("--p", deg + "deg");
+  ring.style.setProperty("--p", Math.min(count/1000*360,360) + "deg");
   completeBox.style.display = count >= 1000 ? "block" : "none";
 }
 
-function toggleTheme(){
-  theme = theme === "light" ? "dark" : "light";
-  localStorage.setItem("wirdiTheme", theme);
-  applyTheme();
+function toggleSound(){
+  soundOn = !soundOn;
+  localStorage.setItem("wirdiSound", soundOn ? "on" : "off");
+  updateSoundIcon();
 }
 
-function applyTheme(){
-  document.body.classList.toggle("dark", theme === "dark");
-  themeBtn.innerText = theme === "dark" ? "☀️" : "🌙";
+function updateSoundIcon(){
+  soundBtn.innerText = soundOn ? "🔊" : "🔇";
+}
+
+function playSoftTap(){
+  if(!soundOn) return;
+  audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+  const now = audioCtx.currentTime;
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+
+  osc.type = "sine";
+  osc.frequency.setValueAtTime(620, now);
+  osc.frequency.exponentialRampToValueAtTime(420, now + .12);
+
+  gain.gain.setValueAtTime(.0001, now);
+  gain.gain.exponentialRampToValueAtTime(.035, now + .01);
+  gain.gain.exponentialRampToValueAtTime(.0001, now + .18);
+
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start(now);
+  osc.stop(now + .2);
 }
 
 function makePetals(e){
   for(let i=0;i<6;i++){
-    const petal = document.createElement("span");
-    petal.className = "petal";
-    petal.style.left = e.clientX + "px";
-    petal.style.top = e.clientY + "px";
-    petal.style.setProperty("--x", (Math.random()*130-65) + "px");
-    petal.style.transform = `rotate(${Math.random()*160}deg)`;
-    document.body.appendChild(petal);
-    setTimeout(()=>petal.remove(),1200);
+    const p=document.createElement("span");
+    p.className="petal";
+    p.style.left=e.clientX+"px";
+    p.style.top=e.clientY+"px";
+    p.style.setProperty("--x",(Math.random()*130-65)+"px");
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),1200);
   }
 }
 </script>
-
 </body>
 </html>
