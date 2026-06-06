@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>وردي 🌸</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ffd6e7,#fff5f8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin:0;
+}
+
+.card{
+    background:white;
+    width:350px;
+    padding:30px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(255,182,193,.3);
+}
+
+.logo{
+    font-size:40px;
+}
+
+h1{
+    color:#e77aa8;
+    margin:10px 0;
+}
+
+.subtitle{
+    color:#999;
+    margin-bottom:20px;
+}
+
+.counter{
+    font-size:72px;
+    font-weight:bold;
+    color:#d95c93;
+    margin:20px 0;
+}
+
+.progress{
+    height:14px;
+    background:#f1f1f1;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.bar{
+    height:100%;
+    width:0%;
+    background:#ff9fc4;
+    transition:.3s;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    border-radius:20px;
+    padding:16px 25px;
+    font-size:18px;
+    margin-top:15px;
+}
+
+.main{
+    background:#ff9fc4;
+    color:white;
+    width:100%;
+}
+
+.reset{
+    background:#eee;
+    width:100%;
+}
+
+.done{
+    color:#6aa84f;
+    margin-top:15px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">🌷</div>
+
+<h1>وردي</h1>
+
+<div class="subtitle">
+وردك اليومي إلى 1000
+</div>
+
+<div class="counter" id="count">0</div>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+<button class="main" onclick="addDhikr()">
+سبحان الله
+</button>
+
+<button class="reset" onclick="resetCounter()">
+إعادة التصفير
+</button>
+
+<div class="done" id="message"></div>
+
+</div>
+
+<script>
+
+let count = Number(localStorage.getItem("wirdiCount")) || 0;
+
+updateUI();
+
+function addDhikr(){
+
+if(count < 1000){
+count++;
+localStorage.setItem("wirdiCount",count);
+updateUI();
+}
+
+if(count === 1000){
+document.getElementById("message").innerHTML =
+"🌸 ما شاء الله! اكتمل وردك اليومي";
+}
+}
+
+function resetCounter(){
+
+count = 0;
+
+localStorage.setItem("wirdiCount",0);
+
+document.getElementById("message").innerHTML = "";
+
+updateUI();
+}
+
+function updateUI(){
+
+document.getElementById("count").innerHTML = count;
+
+document.getElementById("bar").style.width =
+(count/1000*100)+"%";
+}
+
+</script>
+
+</body>
+</html>
