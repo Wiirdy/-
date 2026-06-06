@@ -449,10 +449,29 @@ function chooseDhikr(btn){
   mainBtn.innerText = currentDhikr;
 }
 
-function updateUI(){
-  countEl.innerText = count;
-  ring.style.setProperty("--p", Math.min(count/1000*360,360) + "deg");
-  completeBox.style.display = count >= 1000 ? "block" : "none";
+function addDhikr(e){
+
+  if(count < 1000){
+
+    count++;
+    total++;
+
+    localStorage.setItem("wirdiCount", count);
+    localStorage.setItem("wirdiTotal", total);
+
+    updateUI();
+    makePetals(e);
+
+    if(navigator.vibrate){
+      navigator.vibrate(15);
+    }
+
+  }
+
+  if(count === 1000){
+    completeBox.style.display = "block";
+  }
+}
 }
 
 function toggleSound(){
