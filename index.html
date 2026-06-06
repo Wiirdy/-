@@ -5,417 +5,265 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>وردي</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-
 <style>
-:root{
-  --pink:#F47DAA;
-  --deep:#D85A8D;
-  --soft:#FFF8FB;
-  --light:#FFE3EE;
-  --text:#7A5A61;
-  --white:rgba(255,255,255,.78);
-}
-
-*{box-sizing:border-box}
-
 body{
   margin:0;
   min-height:100vh;
+  background:#fffaff;
+  font-family: Arial, sans-serif;
+  color:#ff8ed0;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+.page{
+  width:100%;
+  max-width:430px;
+  min-height:100vh;
+  margin:auto;
+  padding:28px 22px 90px;
+  position:relative;
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.circle{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:#ff9bd6;
+  color:white;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:24px;
-  font-family:'Amiri',serif;
-  color:var(--text);
-  background:
-    radial-gradient(circle at top,#fff 0%,#fff8fb 35%,#ffe3ee 100%);
-  transition:.4s;
+  font-size:27px;
+  box-shadow:0 0 22px #ffc7ea;
+  border:0;
 }
 
-body.dark{
-  --soft:#2D2430;
-  --light:#5d3a4d;
-  --text:#F7DCE7;
-  background:
-    radial-gradient(circle at top,#5c3b52 0%,#2d2430 70%);
+.logo{
+  font-size:76px;
+  font-weight:900;
+  margin:25px 0 0;
+  color:#ff8ed0;
+  text-shadow:0 0 18px #ffb6e5;
+  letter-spacing:2px;
 }
 
-.card{
-  width:min(560px,100%);
-  background:var(--white);
-  border-radius:42px;
-  padding:32px 28px 28px;
-  text-align:center;
-  box-shadow:0 30px 80px rgba(216,90,141,.22);
-  position:relative;
-  overflow:hidden;
-}
-
-body.dark .card{
-  background:rgba(54,42,58,.86);
-  box-shadow:0 30px 80px rgba(0,0,0,.25);
-}
-
-.topBtn{
-  position:absolute;
-  top:34px;
-  width:58px;
-  height:58px;
-  border:1px solid #ffd0df;
-  border-radius:50%;
-  background:rgba(255,255,255,.72);
-  color:var(--deep);
-  font-size:25px;
-  cursor:pointer;
-  box-shadow:0 10px 25px rgba(216,90,141,.13);
-}
-
-body.dark .topBtn{
-  background:rgba(255,255,255,.08);
-  border-color:rgba(255,255,255,.18);
-}
-
-.moon{left:34px;color:#E84F88}
-.sound{right:34px}
-
-.sound small{
-  display:block;
-  font-size:10px;
-  line-height:1;
-  margin-top:-4px;
+.sub{
+  font-size:24px;
+  font-weight:bold;
+  margin-top:8px;
 }
 
 .tasbeeh{
-  width:140px;
-  height:170px;
-  margin:0 auto 10px;
-  position:relative;
+  position:absolute;
+  left:18px;
+  top:245px;
+  width:120px;
+  height:250px;
+  opacity:.85;
 }
 
 .bead{
   position:absolute;
-  width:16px;
-  height:16px;
+  width:17px;
+  height:17px;
   border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#fff,#ff9ec1 45%,#d85a8d 100%);
-  box-shadow:0 3px 8px rgba(216,90,141,.22);
-  left:62px;
-  top:52px;
-  transform:rotate(calc(var(--i)*20deg)) translateY(-52px);
-}
-
-/* الوردة صارت أنعم وأصغر */
-.rose{
-  position:absolute;
-  right:26px;
-  top:70px;
-  width:25px;
-  height:25px;
-  border-radius:50%;
-  background:
-    radial-gradient(circle,#ffdce9 0 18%,transparent 19%),
-    conic-gradient(from 0deg,#f6a9c4,#fff1f6,#f8bfd3,#fff1f6,#f6a9c4);
-  opacity:.72;
-  box-shadow:0 4px 10px rgba(216,90,141,.12);
-}
-
-.rose::before,
-.rose::after{
-  content:"";
-  position:absolute;
-  width:12px;
-  height:7px;
-  background:#b7b98d;
-  border-radius:50%;
-  opacity:.45;
-  top:13px;
-}
-
-.rose::before{right:-7px;transform:rotate(-25deg)}
-.rose::after{left:-7px;transform:rotate(25deg)}
-
-.tasselHeart{
-  position:absolute;
-  left:50%;
-  top:113px;
-  transform:translateX(-50%);
-  color:var(--deep);
-  font-size:28px;
-}
-
-.tassel{
-  position:absolute;
-  left:50%;
-  top:140px;
-  transform:translateX(-50%);
-  width:18px;
-  height:24px;
-  background:linear-gradient(#f7a4c3,#d85a8d);
-  clip-path:polygon(35% 0,65% 0,100% 100%,0 100%);
-  border-radius:0 0 12px 12px;
-  opacity:.75;
-}
-
-h1{
-  font-family:'Aref Ruqaa',serif;
-  font-size:67px;
-  line-height:1.05;
-  color:var(--deep);
-  margin:0;
-}
-
-.subtitle{
-  font-size:22px;
-  margin-top:8px;
+  background:radial-gradient(circle at 30% 25%,#fff,#ffa8dc 45%,#ff72bf);
+  box-shadow:0 0 10px #ffc4e9;
 }
 
 .ring{
-  --p:0deg;
-  width:270px;
-  height:270px;
-  margin:30px auto 24px;
+  width:250px;
+  height:250px;
+  border:14px solid #ffd4ef;
   border-radius:50%;
-  padding:13px;
-  background:conic-gradient(var(--pink) var(--p), #ffe9f1 0);
-  box-shadow:0 0 45px rgba(244,125,170,.18);
-}
-
-.ringInner{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  background:rgba(255,255,255,.94);
+  margin:55px auto 25px;
   display:flex;
   flex-direction:column;
-  align-items:center;
   justify-content:center;
+  align-items:center;
 }
 
-body.dark .ringInner{
-  background:rgba(255,255,255,.08);
+.label{
+  font-size:23px;
+  font-weight:bold;
 }
-
-.label,.goal{font-size:22px}
 
 .count{
-  font-family:Georgia,serif;
   font-size:82px;
-  color:var(--deep);
+  font-weight:900;
+  color:#ff7fc8;
+  text-shadow:0 0 8px #ffd3ef;
   line-height:1;
 }
 
-.mainBtn{
+.goal{
+  font-size:24px;
+  font-weight:bold;
+}
+
+.main{
   width:100%;
-  border:0;
-  border-radius:999px;
-  padding:20px;
-  font-family:'Aref Ruqaa',serif;
-  font-size:32px;
-  color:white;
-  background:linear-gradient(135deg,#ff9cc2,var(--deep));
-  box-shadow:0 18px 40px rgba(216,90,141,.34);
+  height:86px;
+  border-radius:22px;
+  border:4px dashed #ffb6e5;
+  background:#ffe1f3;
+  color:#ff78c8;
+  font-size:34px;
+  font-weight:900;
+  box-shadow:0 0 22px #ffd7f1;
   cursor:pointer;
 }
 
-.mainBtn:active{transform:scale(.98)}
-
-.dua{
-  margin:19px 0 22px;
+.ayah{
+  margin:24px 0;
   font-size:21px;
-  color:#946872;
+  font-weight:bold;
 }
-
-body.dark .dua{color:#f7dce7}
 
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:16px;
 }
 
 .dhikr{
-  border:1px solid #f8cdda;
-  background:rgba(255,255,255,.68);
-  color:var(--text);
-  border-radius:20px;
-  padding:13px 8px;
-  font-family:'Amiri',serif;
-  font-size:19px;
+  height:66px;
+  border-radius:18px;
+  border:3px solid #fface0;
+  background:white;
+  color:#ff8ed0;
+  font-size:20px;
+  font-weight:bold;
+  box-shadow:0 0 16px #ffe1f3;
+  position:relative;
   cursor:pointer;
-}
-
-body.dark .dhikr{
-  background:rgba(255,255,255,.08);
-  border-color:rgba(255,255,255,.15);
 }
 
 .dhikr.active{
-  background:#fff0f6;
-  color:var(--deep);
-  border-color:#f4a7c4;
+  background:#ffeaf7;
 }
 
-.actions{
+.heart{
+  position:absolute;
+  top:-18px;
+  left:-13px;
+  font-size:28px;
+}
+
+.bottom{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  max-width:430px;
+  margin:auto;
+  height:72px;
+  background:#fffaff;
   display:flex;
-  gap:12px;
-  margin-top:18px;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 24px;
 }
 
-.actionBtn{
-  flex:1;
-  border:1px solid #f5cbd9;
-  background:rgba(255,255,255,.62);
-  color:#a26470;
-  border-radius:999px;
-  padding:13px;
-  font-family:'Aref Ruqaa',serif;
-  font-size:20px;
-  cursor:pointer;
+.nav{
+  color:#ff8ed0;
+  font-size:18px;
+  font-weight:bold;
+  background:none;
+  border:0;
 }
 
-body.dark .actionBtn{
-  background:rgba(255,255,255,.08);
-  color:#f7dce7;
-  border-color:rgba(255,255,255,.16);
-}
-
-.complete,.statsBox{
+.stats{
   display:none;
-  margin-top:17px;
+  margin-top:20px;
+  background:#ffeaf7;
+  border:2px solid #ffb6e5;
+  border-radius:20px;
   padding:16px;
-  border-radius:24px;
-  background:#fff0f6;
-  color:var(--deep);
-  font-family:'Aref Ruqaa',serif;
-  font-size:23px;
-}
-
-body.dark .complete,
-body.dark .statsBox{
-  background:rgba(255,255,255,.08);
+  font-size:22px;
+  font-weight:bold;
 }
 
 .petal{
   position:fixed;
-  width:12px;
-  height:18px;
-  background:#ffd7e8;
-  border-radius:12px 12px 12px 2px;
-  pointer-events:none;
-  animation:float 1.25s ease-out forwards;
-  z-index:999;
-}
-
-@keyframes float{
-  0%{opacity:1;transform:translate(0,0) scale(.7) rotate(0)}
-  100%{opacity:0;transform:translate(var(--x),-115px) scale(1.25) rotate(80deg)}
-}
-
-.bgPetal{
-  position:absolute;
-  width:32px;
-  height:48px;
+  width:14px;
+  height:20px;
+  background:#ffd0eb;
   border-radius:70% 30% 70% 30%;
-  background:linear-gradient(135deg,#ffd6e5,#fff2f7);
-  opacity:.55;
-  filter:blur(.2px);
-  animation:slow 6s ease-in-out infinite alternate;
+  pointer-events:none;
+  animation:fly 1.1s ease-out forwards;
 }
 
-.p1{left:55px;top:210px;transform:rotate(30deg)}
-.p2{right:70px;top:260px;transform:rotate(-25deg)}
-.p3{left:75px;top:420px;transform:rotate(-15deg)}
-.p4{right:45px;top:510px;transform:rotate(25deg)}
-
-@keyframes slow{
-  from{margin-top:0}
-  to{margin-top:-16px}
+@keyframes fly{
+  from{opacity:1;transform:translate(0,0) rotate(0)}
+  to{opacity:0;transform:translate(var(--x),-110px) rotate(90deg)}
 }
 </style>
 </head>
 
 <body>
-<div class="card">
 
-  <button class="topBtn moon" id="themeBtn" onclick="toggleTheme()">☾</button>
-  <button class="topBtn sound" id="soundBtn" onclick="toggleSound()">🔊<small>ON</small></button>
+<div class="page">
 
-  <div class="bgPetal p1"></div>
-  <div class="bgPetal p2"></div>
-  <div class="bgPetal p3"></div>
-  <div class="bgPetal p4"></div>
-
-  <div class="tasbeeh">
-    <span class="bead" style="--i:0"></span><span class="bead" style="--i:1"></span>
-    <span class="bead" style="--i:2"></span><span class="bead" style="--i:3"></span>
-    <span class="bead" style="--i:4"></span><span class="bead" style="--i:5"></span>
-    <span class="bead" style="--i:6"></span><span class="bead" style="--i:7"></span>
-    <span class="bead" style="--i:8"></span><span class="bead" style="--i:9"></span>
-    <span class="bead" style="--i:10"></span><span class="bead" style="--i:11"></span>
-    <span class="bead" style="--i:12"></span><span class="bead" style="--i:13"></span>
-    <span class="bead" style="--i:14"></span><span class="bead" style="--i:15"></span>
-    <span class="bead" style="--i:16"></span><span class="bead" style="--i:17"></span>
-    <div class="rose"></div>
-    <div class="tasselHeart">♥</div>
-    <div class="tassel"></div>
+  <div class="top">
+    <button class="circle">☾</button>
+    <button class="circle" id="soundBtn" onclick="toggleSound()">🔇</button>
   </div>
 
-  <h1>وردي</h1>
-  <div class="subtitle">وردك اليومي إلى 1000</div>
+  <div class="logo">وردي</div>
+  <div class="sub">وردك اليومي إلى 1000</div>
 
-  <div class="ring" id="ring">
-    <div class="ringInner">
-      <div class="label">العدد</div>
-      <div class="count" id="count">0</div>
-      <div class="goal">من 1000</div>
-      <div style="color:var(--deep);font-size:24px">♥</div>
-    </div>
+  <div class="tasbeeh" id="tasbeeh"></div>
+
+  <div class="ring">
+    <div class="label">العدد</div>
+    <div class="count" id="count">0</div>
+    <div class="goal">من 1000</div>
   </div>
 
-  <button class="mainBtn" id="mainBtn" onclick="addDhikr(event)">سبحان الله</button>
+  <button class="main" id="mainBtn" onclick="addDhikr(event)">سبحان الله</button>
 
-  <div class="dua">اللهم اجعل هذا اليوم مليئًا بذكرك ورضاك</div>
+  <div class="ayah">﴿فَاذْكُرُونِي أَذْكُرْكُمْ﴾ [البقرة:152]</div>
 
   <div class="grid">
-    <button class="dhikr active" onclick="chooseDhikr(this)">سبحان الله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)">الحمد لله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)">لا إله إلا الله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)">الله أكبر</button>
-    <button class="dhikr" onclick="chooseDhikr(this)">أستغفر الله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)">اللهم صل وسلم على نبينا محمد ﷺ</button>
+    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>الحمد لله</button>
+    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>الله أكبر</button>
+    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>لا إله إلا الله</button>
+    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>أستغفر الله</button>
+    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>اللهم صل وسلم على نبينا محمد ﷺ</button>
+    <button class="dhikr active" onclick="chooseDhikr(this)"><span class="heart">💗</span>سبحان الله</button>
   </div>
 
-  <div class="actions">
-    <button class="actionBtn" onclick="showStats()">إحصائياتي</button>
-    <button class="actionBtn" onclick="resetCounter()">إعادة التصفير ↻</button>
-  </div>
+  <div class="stats" id="statsBox"></div>
 
-  <div class="statsBox" id="statsBox"></div>
-  <div class="complete" id="completeBox">🌷<br>ما شاء الله<br>اكتمل وردك اليومي<br>1000 / 1000</div>
+</div>
 
+<div class="bottom">
+  <button class="nav" onclick="showStats()">📊<br>إحصائياتي</button>
+  <button class="nav" onclick="resetCounter()">↩<br>تصفير</button>
 </div>
 
 <script>
 let count = Number(localStorage.getItem("wirdiCount")) || 0;
 let total = Number(localStorage.getItem("wirdiTotal")) || 0;
 let currentDhikr = localStorage.getItem("wirdiDhikr") || "سبحان الله";
-let soundOn = localStorage.getItem("wirdiSound") !== "off";
-let theme = localStorage.getItem("wirdiTheme") || "light";
-let audioCtx;
+let soundOn = false;
 
 const countEl = document.getElementById("count");
-const ring = document.getElementById("ring");
 const mainBtn = document.getElementById("mainBtn");
-const soundBtn = document.getElementById("soundBtn");
-const themeBtn = document.getElementById("themeBtn");
-const completeBox = document.getElementById("completeBox");
 const statsBox = document.getElementById("statsBox");
+const soundBtn = document.getElementById("soundBtn");
 
 mainBtn.innerText = currentDhikr;
-applyTheme();
 updateUI();
-updateSoundIcon();
+makeTasbeeh();
 
 function addDhikr(e){
   if(count < 1000){
@@ -425,17 +273,20 @@ function addDhikr(e){
     localStorage.setItem("wirdiTotal", total);
     updateUI();
     makePetals(e);
-    playSoftSound();
+
+    if(navigator.vibrate){
+      navigator.vibrate(15);
+    }
   }
-  if(count === 1000){
-    completeBox.style.display = "block";
-  }
+}
+
+function updateUI(){
+  countEl.innerText = count;
 }
 
 function resetCounter(){
   count = 0;
   localStorage.setItem("wirdiCount", 0);
-  completeBox.style.display = "none";
   statsBox.style.display = "none";
   updateUI();
 }
@@ -443,36 +294,9 @@ function resetCounter(){
 function chooseDhikr(btn){
   document.querySelectorAll(".dhikr").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  currentDhikr = btn.innerText;
+  currentDhikr = btn.innerText.replace("💗","").trim();
   localStorage.setItem("wirdiDhikr", currentDhikr);
   mainBtn.innerText = currentDhikr;
-}
-
-function updateUI(){
-  countEl.innerText = count;
-  ring.style.setProperty("--p", Math.min(count/1000*360,360) + "deg");
-  completeBox.style.display = count >= 1000 ? "block" : "none";
-}
-
-function toggleSound(){
-  soundOn = !soundOn;
-  localStorage.setItem("wirdiSound", soundOn ? "on" : "off");
-  updateSoundIcon();
-}
-
-function updateSoundIcon(){
-  soundBtn.innerHTML = soundOn ? "🔊<small>ON</small>" : "🔇<small>OFF</small>";
-}
-
-function toggleTheme(){
-  theme = theme === "light" ? "dark" : "light";
-  localStorage.setItem("wirdiTheme", theme);
-  applyTheme();
-}
-
-function applyTheme(){
-  document.body.classList.toggle("dark", theme === "dark");
-  themeBtn.innerText = theme === "dark" ? "☀" : "☾";
 }
 
 function showStats(){
@@ -482,40 +306,45 @@ function showStats(){
     "ورد اليوم: " + count + " / 1000";
 }
 
-function playSoftSound(){
-  if(!soundOn) return;
-
-  audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-
-  const now = audioCtx.currentTime;
-  const osc = audioCtx.createOscillator();
-  const gain = audioCtx.createGain();
-
-  osc.type = "sine";
-  osc.frequency.setValueAtTime(720, now);
-  osc.frequency.exponentialRampToValueAtTime(520, now + .11);
-
-  gain.gain.setValueAtTime(.0001, now);
-  gain.gain.exponentialRampToValueAtTime(.025, now + .012);
-  gain.gain.exponentialRampToValueAtTime(.0001, now + .22);
-
-  osc.connect(gain);
-  gain.connect(audioCtx.destination);
-  osc.start(now);
-  osc.stop(now + .24);
+function toggleSound(){
+  soundOn = !soundOn;
+  soundBtn.innerText = soundOn ? "🔊" : "🔇";
 }
 
 function makePetals(e){
   for(let i=0;i<6;i++){
-    const p=document.createElement("span");
-    p.className="petal";
-    p.style.left=e.clientX+"px";
-    p.style.top=e.clientY+"px";
-    p.style.setProperty("--x",(Math.random()*130-65)+"px");
+    const p = document.createElement("span");
+    p.className = "petal";
+    p.style.left = e.clientX + "px";
+    p.style.top = e.clientY + "px";
+    p.style.setProperty("--x",(Math.random()*120-60)+"px");
     document.body.appendChild(p);
-    setTimeout(()=>p.remove(),1250);
+    setTimeout(()=>p.remove(),1100);
   }
 }
+
+function makeTasbeeh(){
+  const box = document.getElementById("tasbeeh");
+  for(let i=0;i<26;i++){
+    const b = document.createElement("span");
+    b.className = "bead";
+    const t = i/25;
+    const x = 55 + Math.sin(t*5.2)*55;
+    const y = t*230;
+    b.style.left = x + "px";
+    b.style.top = y + "px";
+    box.appendChild(b);
+  }
+
+  const heart = document.createElement("div");
+  heart.innerText = "💗";
+  heart.style.position = "absolute";
+  heart.style.left = "55px";
+  heart.style.top = "145px";
+  heart.style.fontSize = "38px";
+  box.appendChild(heart);
+}
 </script>
+
 </body>
 </html>
