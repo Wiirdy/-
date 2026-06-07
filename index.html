@@ -8,188 +8,44 @@
 <style>
 body{
   margin:0;
-  min-height:100vh;
-  background:#fffaff;
-  font-family: Arial, sans-serif;
-  color:#ff8ed0;
-  text-align:center;
-  overflow-x:hidden;
+  background:#fff8fc;
+  display:flex;
+  justify-content:center;
 }
 
-.page{
+.app{
+  position:relative;
   width:100%;
   max-width:430px;
-  min-height:100vh;
-  margin:auto;
-  padding:28px 22px 90px;
-  position:relative;
 }
 
-.top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.circle{
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  background:#ff9bd6;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:27px;
-  box-shadow:0 0 22px #ffc7ea;
-  border:0;
-}
-
-.logo{
-  font-size:76px;
-  font-weight:900;
-  margin:25px 0 0;
-  color:#ff8ed0;
-  text-shadow:0 0 18px #ffb6e5;
-  letter-spacing:2px;
-}
-
-.sub{
-  font-size:24px;
-  font-weight:bold;
-  margin-top:8px;
-}
-
-.tasbeeh{
-  position:absolute;
-  left:18px;
-  top:245px;
-  width:120px;
-  height:250px;
-  opacity:.85;
-}
-
-.bead{
-  position:absolute;
-  width:17px;
-  height:17px;
-  border-radius:50%;
-  background:radial-gradient(circle at 30% 25%,#fff,#ffa8dc 45%,#ff72bf);
-  box-shadow:0 0 10px #ffc4e9;
-}
-
-.ring{
-  width:250px;
-  height:250px;
-  border:14px solid #ffd4ef;
-  border-radius:50%;
-  margin:55px auto 25px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-
-.label{
-  font-size:23px;
-  font-weight:bold;
-}
-
-.count{
-  font-size:82px;
-  font-weight:900;
-  color:#ff7fc8;
-  text-shadow:0 0 8px #ffd3ef;
-  line-height:1;
-}
-
-.goal{
-  font-size:24px;
-  font-weight:bold;
-}
-
-.main{
+.bg{
   width:100%;
-  height:86px;
-  border-radius:22px;
-  border:4px dashed #ffb6e5;
-  background:#ffe1f3;
-  color:#ff78c8;
-  font-size:34px;
-  font-weight:900;
-  box-shadow:0 0 22px #ffd7f1;
+  display:block;
+}
+
+.tap{
+  position:absolute;
+  border:0;
+  background:transparent;
   cursor:pointer;
 }
 
-.ayah{
-  margin:24px 0;
-  font-size:21px;
-  font-weight:bold;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-
-.dhikr{
-  height:66px;
-  border-radius:18px;
-  border:3px solid #fface0;
-  background:white;
-  color:#ff8ed0;
-  font-size:20px;
-  font-weight:bold;
-  box-shadow:0 0 16px #ffe1f3;
-  position:relative;
-  cursor:pointer;
-}
-
-.dhikr.active{
-  background:#ffeaf7;
-}
-
-.heart{
+#counter{
   position:absolute;
-  top:-18px;
-  left:-13px;
-  font-size:28px;
-}
-
-.bottom{
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  max-width:430px;
-  margin:auto;
-  height:72px;
-  background:#fffaff;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 24px;
-}
-
-.nav{
-  color:#ff8ed0;
-  font-size:18px;
+  top:32.5%;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:72px;
   font-weight:bold;
-  background:none;
-  border:0;
+  color:#ff9bd6;
+  text-shadow:0 0 8px #ffd6ef;
+  pointer-events:none;
 }
 
-.stats{
-  display:none;
-  margin-top:20px;
-  background:#ffeaf7;
-  border:2px solid #ffb6e5;
-  border-radius:20px;
-  padding:16px;
-  font-size:22px;
-  font-weight:bold;
-}
+.main{top:49%; left:8%; width:84%; height:9%;}
+.stats{bottom:2%; left:3%; width:25%; height:8%;}
+.reset{bottom:2%; right:3%; width:25%; height:8%;}
 
 .petal{
   position:fixed;
@@ -210,60 +66,22 @@ body{
 
 <body>
 
-<div class="page">
+<div class="app">
+  <img class="bg" src="wirdi-bg.png" alt="وردي">
 
-  <div class="top">
-    <button class="circle">☾</button>
-    <button class="circle" id="soundBtn" onclick="toggleSound()">🔇</button>
-  </div>
+  <div id="counter">0</div>
 
-  <div class="logo">وردي</div>
-  <div class="sub">وردك اليومي إلى 1000</div>
-
-  <div class="tasbeeh" id="tasbeeh"></div>
-
-  <div class="ring">
-    <div class="label">العدد</div>
-    <div class="count" id="count">0</div>
-    <div class="goal">من 1000</div>
-  </div>
-
-  <button class="main" id="mainBtn" onclick="addDhikr(event)">سبحان الله</button>
-
-  <div class="ayah">﴿فَاذْكُرُونِي أَذْكُرْكُمْ﴾ [البقرة:152]</div>
-
-  <div class="grid">
-    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>الحمد لله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>الله أكبر</button>
-    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>لا إله إلا الله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>أستغفر الله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>اللهم صل وسلم على نبينا محمد ﷺ</button>
-    <button class="dhikr active" onclick="chooseDhikr(this)"><span class="heart">💗</span>سبحان الله</button>
-  </div>
-
-  <div class="stats" id="statsBox"></div>
-
-</div>
-
-<div class="bottom">
-  <button class="nav" onclick="showStats()">📊<br>إحصائياتي</button>
-  <button class="nav" onclick="resetCounter()">↩<br>تصفير</button>
+  <button class="tap main" onclick="addDhikr(event)"></button>
+  <button class="tap stats" onclick="showStats()"></button>
+  <button class="tap reset" onclick="resetCounter()"></button>
 </div>
 
 <script>
 let count = Number(localStorage.getItem("wirdiCount")) || 0;
 let total = Number(localStorage.getItem("wirdiTotal")) || 0;
-let currentDhikr = localStorage.getItem("wirdiDhikr") || "سبحان الله";
-let soundOn = false;
 
-const countEl = document.getElementById("count");
-const mainBtn = document.getElementById("mainBtn");
-const statsBox = document.getElementById("statsBox");
-const soundBtn = document.getElementById("soundBtn");
-
-mainBtn.innerText = currentDhikr;
+const counter = document.getElementById("counter");
 updateUI();
-makeTasbeeh();
 
 function addDhikr(e){
   if(count < 1000){
@@ -281,34 +99,17 @@ function addDhikr(e){
 }
 
 function updateUI(){
-  countEl.innerText = count;
+  counter.innerText = count;
 }
 
 function resetCounter(){
   count = 0;
-  localStorage.setItem("wirdiCount", 0);
-  statsBox.style.display = "none";
+  localStorage.setItem("wirdiCount", count);
   updateUI();
 }
 
-function chooseDhikr(btn){
-  document.querySelectorAll(".dhikr").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
-  currentDhikr = btn.innerText.replace("💗","").trim();
-  localStorage.setItem("wirdiDhikr", currentDhikr);
-  mainBtn.innerText = currentDhikr;
-}
-
 function showStats(){
-  statsBox.style.display = statsBox.style.display === "block" ? "none" : "block";
-  statsBox.innerHTML =
-    "إجمالي أذكارك: " + total.toLocaleString() + "<br>" +
-    "ورد اليوم: " + count + " / 1000";
-}
-
-function toggleSound(){
-  soundOn = !soundOn;
-  soundBtn.innerText = soundOn ? "🔊" : "🔇";
+  alert("إجمالي أذكارك: " + total + "\nورد اليوم: " + count + " / 1000");
 }
 
 function makePetals(e){
@@ -321,28 +122,6 @@ function makePetals(e){
     document.body.appendChild(p);
     setTimeout(()=>p.remove(),1100);
   }
-}
-
-function makeTasbeeh(){
-  const box = document.getElementById("tasbeeh");
-  for(let i=0;i<26;i++){
-    const b = document.createElement("span");
-    b.className = "bead";
-    const t = i/25;
-    const x = 55 + Math.sin(t*5.2)*55;
-    const y = t*230;
-    b.style.left = x + "px";
-    b.style.top = y + "px";
-    box.appendChild(b);
-  }
-
-  const heart = document.createElement("div");
-  heart.innerText = "💗";
-  heart.style.position = "absolute";
-  heart.style.left = "55px";
-  heart.style.top = "145px";
-  heart.style.fontSize = "38px";
-  box.appendChild(heart);
 }
 </script>
 
