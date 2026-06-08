@@ -1,290 +1,205 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>وردي</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
 
-*{box-sizing:border-box}
+<style>
 body{
-  margin:0;
-  font-family:"Tajawal",sans-serif;
-  background:linear-gradient(180deg,#fff7fb,#ffeaf3);
-  color:#7b294a;
-  padding-bottom:85px;
+margin:0;
+font-family:'Tahoma',sans-serif;
+background:linear-gradient(to bottom,#fff,#ffeef6);
+color:#d96a95;
 }
-.page{display:none;min-height:100vh;padding:22px}
-.page.active{display:block}
-.hero{text-align:center;padding-top:15px}
+
+header{
+text-align:center;
+padding:30px;
+}
+
 .logo{
-  font-size:78px;font-weight:800;color:#f06aa4;
-  text-shadow:0 8px 18px #f9a3c8;
+font-size:70px;
+font-weight:bold;
+text-shadow:0 5px 15px rgba(255,105,180,.4);
 }
-.sub{font-size:20px;color:#d06493}
-.circle{
-  width:260px;height:260px;border-radius:50%;
-  margin:35px auto 20px;background:#fff;
-  border:9px solid #f79bc3;
-  box-shadow:0 15px 35px #f7b5cf;
-  display:flex;align-items:center;justify-content:center;flex-direction:column;
+
+.subtitle{
+font-size:20px;
 }
-#count{font-size:78px;font-weight:700;color:#ef6aa3}
-.done{
-  margin:20px auto;padding:18px;max-width:520px;text-align:center;
-  background:#ffd7e8;border:2px dashed #fff;border-radius:28px;
-  box-shadow:0 10px 22px #f7c0d5;
-  font-size:24px;font-weight:700;
+
+.counter-box{
+width:250px;
+height:250px;
+border:8px solid #f7a8c5;
+border-radius:50%;
+margin:20px auto;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:white;
+box-shadow:0 10px 30px rgba(255,192,203,.4);
 }
-.verse{text-align:center;color:#c75183;font-size:18px;margin:18px}
-.grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:14px;
-  max-width:620px;margin:auto;
+
+#count{
+font-size:80px;
+font-weight:bold;
 }
-.btn{
-  border:1.5px solid #f4aac8;background:#fff;border-radius:22px;
-  padding:18px;font-size:18px;color:#c34c7b;cursor:pointer;
-  box-shadow:0 7px 15px #ffd3e4;
+
+.buttons{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:20px;
+max-width:600px;
+margin:auto;
 }
+
+.zikr{
+background:white;
+border:2px solid #f7b8cf;
+padding:18px;
+border-radius:20px;
+font-size:20px;
+cursor:pointer;
+color:#d96a95;
+}
+
 .reset{
-  width:88px;height:88px;border-radius:50%;display:block;margin:25px auto;
-  border:none;background:linear-gradient(#ff8fbe,#e94f95);
-  color:#fff;font-size:17px;box-shadow:0 12px 24px #f4a6c8;
+display:block;
+margin:20px auto;
+background:#ff8fbd;
+color:white;
+border:none;
+padding:15px 40px;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
 }
-.top{display:flex;justify-content:center;align-items:center;position:relative}
-.top h1{color:#d45586}
-.card{
-  background:rgba(255,255,255,.85);border:1px solid #f4c0d5;
-  border-radius:24px;padding:18px;margin:15px 0;
-  box-shadow:0 8px 25px #ffd8e8;
+
+.section{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:25px;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
 }
-.stats{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+
+h2{
+text-align:center;
 }
-.stat{text-align:center}
-.stat .icon{font-size:30px}
-.stat b{display:block;font-size:25px;color:#5c2238;margin-top:8px}
-.calendar{
-  width:100%;border-collapse:separate;border-spacing:8px;text-align:center;
+
+.surah{
+background:#fff6fa;
+padding:15px;
+margin-top:15px;
+border-radius:15px;
+line-height:2;
 }
-.calendar th{font-size:13px;color:#7a3650}
-.calendar td{
-  background:#fff;border-radius:14px;padding:9px 3px;
-  box-shadow:0 4px 10px #ffe0ed;font-size:14px;
+
+footer{
+text-align:center;
+padding:30px;
+color:#c57a98;
 }
-.flower{font-size:21px;display:block}
-.achievements{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center}
-.achievements div{
-  background:#fff;border:1px solid #f2c0d3;border-radius:18px;padding:12px 5px;
-}
-.achievements span{font-size:30px}
-.azkar-list{display:grid;gap:12px}
-.zikr-card{
-  background:#fff;border:1px solid #f3bfd3;border-radius:20px;padding:16px;
-  line-height:2;text-align:center;font-size:20px;
-}
-.quran-cover{
-  text-align:center;padding:40px 20px;
-  background:linear-gradient(180deg,#fff,#ffe1ee);
-  border-radius:30px;border:1px solid #f0b5cc;
-}
-.quran-cover h2{font-size:38px;color:#d45586}
-.open-book{
-  border:none;background:#ef6aa3;color:white;
-  padding:16px 38px;border-radius:30px;font-size:20px;
-}
-.book{
-  background:#fffdf8;color:#3d2b1f;border-radius:18px;
-  padding:25px;margin-top:18px;line-height:2.4;
-  box-shadow:inset 0 0 0 2px #ead8bd,0 10px 25px #ead4c1;
-  font-size:22px;text-align:center;
-}
-select{
-  width:100%;padding:15px;border-radius:16px;border:1px solid #e9b8ca;
-  font-size:18px;margin:12px 0;color:#7b294a;background:white;
-}
-.nav{
-  position:fixed;bottom:0;left:0;right:0;height:72px;background:#fff;
-  border-top:1px solid #f4c5d8;display:flex;justify-content:space-around;
-  z-index:10;
-}
-.nav button{
-  border:none;background:none;color:#777;font-family:inherit;font-size:13px;
-}
-.nav button.active{color:#ef5a9b;font-weight:700}
-.nav span{display:block;font-size:25px}
-@media(min-width:800px){.page{max-width:760px;margin:auto}.stats{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
 
 <body>
 
-<section id="home" class="page active">
-  <div class="hero">
-    <div class="logo">وردي</div>
-    <div class="sub">♥ وردك اليومي إلى 1000 ♥</div>
-  </div>
-  
-  <section id="quran" class="page">
-  <div class="top"><h1>القرآن الكريم</h1></div>
+<header>
+<div class="logo">وردي</div>
+<div class="subtitle">وردك اليومي إلى 1000 🌸</div>
+</header>
 
-  <div class="quran-cover" id="cover">
-    <h2>📖 المصحف</h2>
-    <p>قراءة القرآن كامل داخل الموقع</p>
-    <button class="open-book" onclick="openQuran()">افتحي المصحف</button>
-  </div>
-
-  <div id="bookArea" style="display:none">
-    <select id="surahSelect" onchange="loadSurah(this.value)"></select>
-
-    <div class="book">
-      <h2 id="surahTitle"></h2>
-      <div id="surahText">جاري التحميل...</div>
-
-      <div style="display:flex;gap:10px;justify-content:center;margin-top:25px">
-        <button class="btn" onclick="prevSurah()">السورة السابقة</button>
-        <button class="btn" onclick="nextSurah()">السورة التالية</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <div class="circle">
-    <div>العدد</div>
-    <div id="count">0</div>
-    <div>من 1000</div>
-  </div>
-
-  <div class="done" id="doneText">ابدئي وردك 🌸</div>
-
-  <div class="verse">﴿فَاذْكُرُونِي أَذْكُرْكُمْ﴾ [البقرة:152]</div>
-
-  <div class="grid">
-    <button class="btn" onclick="addZikr('الحمد لله')">الحمد لله</button>
-    <button class="btn" onclick="addZikr('الله أكبر')">الله أكبر</button>
-    <button class="btn" onclick="addZikr('لا إله إلا الله')">لا إله إلا الله</button>
-    <button class="btn" onclick="addZikr('أستغفر الله')">أستغفر الله</button>
-    <button class="btn" onclick="addZikr('اللهم صل وسلم على نبينا محمد ﷺ')">اللهم صل وسلم على نبينا محمد ﷺ</button>
-    <button class="btn" onclick="addZikr('سبحان الله')">سبحان الله</button>
-  </div>
-
-  <button class="reset" onclick="resetCounter()">↻<br>تصفير</button>
-</section>
-
-<section id="stats" class="page">
-  <div class="top"><h1>إحصائيات</h1></div>
-
-  <div class="stats">
-    <div class="card stat"><div class="icon">🌸</div>إجمالي الأذكار<b id="total">0</b></div>
-    <div class="card stat"><div class="icon">👑</div>أفضل يوم<b id="best">0</b></div>
-    <div class="card stat"><div class="icon">🔥</div>أيام متواصلة<b id="streak">0</b></div>
-    <div class="card stat"><div class="icon">🎯</div>نسبة الإكمال<b id="percent">0%</b></div>
-  </div>
-
-  <div class="card">
-    <h2 style="text-align:center;color:#d45586">تقويم الورد</h2>
-    <table class="calendar">
-      <tr><th>السبت</th><th>الأحد</th><th>الإثنين</th><th>الثلاثاء</th><th>الأربعاء</th><th>الخميس</th><th>الجمعة</th></tr>
-      <tr><td>1<span class="flower">🌸</span></td><td>2<span class="flower">🌸</span></td><td>3<span class="flower">🌸</span></td><td>4<span class="flower">🌸</span></td><td>5<span class="flower">🌸</span></td><td>6<span class="flower">🤍</span></td><td>7<span class="flower">🌸</span></td></tr>
-      <tr><td>8<span class="flower">🌸</span></td><td>9<span class="flower">🌸</span></td><td>10<span class="flower">🤍</span></td><td>11<span class="flower">🌸</span></td><td>12<span class="flower">🌸</span></td><td>13<span class="flower">🌸</span></td><td>14<span class="flower">🤍</span></td></tr>
-      <tr><td>15<span class="flower">🌸</span></td><td>16<span class="flower">🌸</span></td><td>17<span class="flower">🌸</span></td><td>18<span class="flower">🌸</span></td><td>19<span class="flower">🤍</span></td><td>20<span class="flower">🌸</span></td><td>21<span class="flower">🌸</span></td></tr>
-      <tr><td>22<span class="flower">🌸</span></td><td>23<span class="flower">🤍</span></td><td>24<span class="flower">🌸</span></td><td>25<span class="flower">🌸</span></td><td>26<span class="flower">🌸</span></td><td>27<span class="flower">🤍</span></td><td>28<span class="flower">🌸</span></td></tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h2 style="text-align:center;color:#d45586">إنجازاتك</h2>
-    <div class="achievements">
-      <div><span>🌹</span><br>1000<br>وردة</div>
-      <div><span>💐</span><br>5000<br>باقة</div>
-      <div><span>🌸</span><br>10000<br>حديقة</div>
-      <div><span>👑</span><br>50000<br>تاج وردي</div>
-    </div>
-  </div>
-</section>
-
-<section id="azkar" class="page">
-  <div class="top"><h1>الأذكار</h1></div>
-  <div class="azkar-list">
-    <div class="zikr-card">سبحان الله وبحمده، سبحان الله العظيم</div>
-    <div class="zikr-card">أستغفر الله العظيم وأتوب إليه</div>
-    <div class="zikr-card">لا حول ولا قوة إلا بالله</div>
-    <div class="zikr-card">اللهم صل وسلم على نبينا محمد ﷺ</div>
-    <div class="zikr-card">حسبي الله لا إله إلا هو عليه توكلت وهو رب العرش العظيم</div>
-  </div>
-</section>
-
-<div class="nav">
-  <button class="active" onclick="showPage('home',this)"><span>🏠</span>الرئيسية</button>
-  <button onclick="showPage('stats',this)"><span>📊</span>إحصائيات</button>
-  <button onclick="showPage('azkar',this)"><span>📿</span>الأذكار</button>
-  <button onclick="showPage('quran',this)"><span>📖</span>القرآن</button>
+<div class="counter-box">
+<div id="count">0</div>
+<div>من 1000</div>
 </div>
 
+<div class="buttons">
+
+<button class="zikr" onclick="increase()">سبحان الله</button>
+
+<button class="zikr" onclick="increase()">الحمد لله</button>
+
+<button class="zikr" onclick="increase()">الله أكبر</button>
+
+<button class="zikr" onclick="increase()">أستغفر الله</button>
+
+<button class="zikr" onclick="increase()">لا إله إلا الله</button>
+
+<button class="zikr" onclick="increase()">اللهم صل وسلم على نبينا محمد ﷺ</button>
+
+</div>
+
+<button class="reset" onclick="resetCounter()">تصفير</button>
+
+<div class="section">
+<h2>📖 القرآن الكريم</h2>
+
+<div class="surah">
+<h3>سورة الفاتحة</h3>
+بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ<br>
+الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ<br>
+الرَّحْمَٰنِ الرَّحِيمِ<br>
+مَالِكِ يَوْمِ الدِّينِ<br>
+إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ<br>
+اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ<br>
+صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ
+</div>
+
+<div class="surah">
+<h3>سورة الإخلاص</h3>
+قُلْ هُوَ اللَّهُ أَحَدٌ<br>
+اللَّهُ الصَّمَدُ<br>
+لَمْ يَلِدْ وَلَمْ يُولَدْ<br>
+وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ
+</div>
+
+<div class="surah">
+<h3>سورة الفلق</h3>
+قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ<br>
+مِن شَرِّ مَا خَلَقَ<br>
+وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ<br>
+وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ<br>
+وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ
+</div>
+
+<div class="surah">
+<h3>سورة الناس</h3>
+قُلْ أَعُوذُ بِرَبِّ النَّاسِ<br>
+مَلِكِ النَّاسِ<br>
+إِلَٰهِ النَّاسِ<br>
+مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ<br>
+الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ<br>
+مِنَ الْجِنَّةِ وَالنَّاسِ
+</div>
+
+</div>
+
+<footer>
+🌸 وردي - اجعل الذكر عادة يومية
+</footer>
+
 <script>
-const surahNames = [
-"الفاتحة","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس",
-"هود","يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه",
-"الأنبياء","الحج","المؤمنون","النور","الفرقان","الشعراء","النمل","القصص","العنكبوت","الروم",
-"لقمان","السجدة","الأحزاب","سبأ","فاطر","يس","الصافات","ص","الزمر","غافر",
-"فصلت","الشورى","الزخرف","الدخان","الجاثية","الأحقاف","محمد","الفتح","الحجرات","ق",
-"الذاريات","الطور","النجم","القمر","الرحمن","الواقعة","الحديد","المجادلة","الحشر","الممتحنة",
-"الصف","الجمعة","المنافقون","التغابن","الطلاق","التحريم","الملك","القلم","الحاقة","المعارج",
-"نوح","الجن","المزمل","المدثر","القيامة","الإنسان","المرسلات","النبأ","النازعات","عبس",
-"التكوير","الانفطار","المطففين","الانشقاق","البروج","الطارق","الأعلى","الغاشية","الفجر","البلد",
-"الشمس","الليل","الضحى","الشرح","التين","العلق","القدر","البينة","الزلزلة","العاديات",
-"القارعة","التكاثر","العصر","الهمزة","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر",
-"المسد","الإخلاص","الفلق","الناس"
-];
+let count = localStorage.getItem("wardiCount") || 0;
 
-let currentSurah = 1;
+document.getElementById("count").innerText = count;
 
-function setupQuran(){
-  const select = document.getElementById("surahSelect");
-  surahNames.forEach((name,index)=>{
-    const option = document.createElement("option");
-    option.value = index + 1;
-    option.textContent = `${index + 1} - سورة ${name}`;
-    select.appendChild(option);
-  });
+function increase(){
+count++;
+if(count>1000) count=1000;
+document.getElementById("count").innerText=count;
+localStorage.setItem("wardiCount",count);
 }
 
-function openQuran(){
-  document.getElementById("cover").style.display="none";
-  document.getElementById("bookArea").style.display="block";
-  loadSurah(1);
+function resetCounter(){
+count=0;
+document.getElementById("count").innerText=count;
+localStorage.setItem("wardiCount",count);
 }
-
-async function loadSurah(number){
-  currentSurah = Number(number);
-  document.getElementById("surahSelect").value = currentSurah;
-  document.getElementById("surahTitle").innerText = "سورة " + surahNames[currentSurah - 1];
-  document.getElementById("surahText").innerHTML = "جاري التحميل...";
-
-  try{
-    const res = await fetch(`https://api.alquran.cloud/v1/surah/${currentSurah}/quran-uthmani`);
-    const data = await res.json();
-
-    let ayat = data.data.ayahs.map(a => 
-      `<span class="ayah">${a.text} <span class="ayah-num">﴿${a.numberInSurah}﴾</span></span>`
-    ).join(" ");
-
-    document.getElementById("surahText").innerHTML = ayat;
-  }catch(e){
-    document.getElementById("surahText").innerHTML = "تعذر تحميل السورة، تأكدي من الاتصال بالإنترنت.";
-  }
-}
-
-function nextSurah(){
-  if(currentSurah < 114) loadSurah(currentSurah + 1);
-}
-
-function prevSurah(){
-  if(currentSurah > 1) loadSurah(currentSurah - 1);
-}
-
-setupQuran();
 </script>
 
 </body>
