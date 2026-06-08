@@ -7,342 +7,198 @@
 
 <style>
 body{
-  margin:0;
-  min-height:100vh;
-  background:#fffaff;
-  font-family: Arial, sans-serif;
-  color:#ff8ed0;
-  text-align:center;
-  overflow-x:hidden;
+margin:0;
+font-family:'Tahoma',sans-serif;
+background:linear-gradient(to bottom,#fff,#ffeef6);
+color:#d96a95;
 }
 
-.page{
-  width:100%;
-  max-width:430px;
-  min-height:100vh;
-  margin:auto;
-  padding:28px 22px 90px;
-  position:relative;
-}
-
-.top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.circle{
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  background:#ff9bd6;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:27px;
-  box-shadow:0 0 22px #ffc7ea;
-  border:0;
+header{
+text-align:center;
+padding:30px;
 }
 
 .logo{
-  font-size:76px;
-  font-weight:900;
-  margin:25px 0 0;
-  color:#ff8ed0;
-  text-shadow:0 0 18px #ffb6e5;
-  letter-spacing:2px;
+font-size:70px;
+font-weight:bold;
+text-shadow:0 5px 15px rgba(255,105,180,.4);
 }
 
-.sub{
-  font-size:24px;
-  font-weight:bold;
-  margin-top:8px;
+.subtitle{
+font-size:20px;
 }
 
-.tasbeeh{
-  position:absolute;
-  left:18px;
-  top:245px;
-  width:120px;
-  height:250px;
-  opacity:.85;
+.counter-box{
+width:250px;
+height:250px;
+border:8px solid #f7a8c5;
+border-radius:50%;
+margin:20px auto;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:white;
+box-shadow:0 10px 30px rgba(255,192,203,.4);
 }
 
-.bead{
-  position:absolute;
-  width:17px;
-  height:17px;
-  border-radius:50%;
-  background:radial-gradient(circle at 30% 25%,#fff,#ffa8dc 45%,#ff72bf);
-  box-shadow:0 0 10px #ffc4e9;
+#count{
+font-size:80px;
+font-weight:bold;
 }
 
-.ring{
-  width:250px;
-  height:250px;
-  border:14px solid #ffd4ef;
-  border-radius:50%;
-  margin:55px auto 25px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+.buttons{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:20px;
+max-width:600px;
+margin:auto;
 }
 
-.label{
-  font-size:23px;
-  font-weight:bold;
+.zikr{
+background:white;
+border:2px solid #f7b8cf;
+padding:18px;
+border-radius:20px;
+font-size:20px;
+cursor:pointer;
+color:#d96a95;
 }
 
-.count{
-  font-size:82px;
-  font-weight:900;
-  color:#ff7fc8;
-  text-shadow:0 0 8px #ffd3ef;
-  line-height:1;
+.reset{
+display:block;
+margin:20px auto;
+background:#ff8fbd;
+color:white;
+border:none;
+padding:15px 40px;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
 }
 
-.goal{
-  font-size:24px;
-  font-weight:bold;
+.section{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:25px;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
 }
 
-.main{
-  width:100%;
-  height:86px;
-  border-radius:22px;
-  border:4px dashed #ffb6e5;
-  background:#ffe1f3;
-  color:#ff78c8;
-  font-size:34px;
-  font-weight:900;
-  box-shadow:0 0 22px #ffd7f1;
-  cursor:pointer;
+h2{
+text-align:center;
 }
 
-.ayah{
-  margin:24px 0;
-  font-size:21px;
-  font-weight:bold;
+.surah{
+background:#fff6fa;
+padding:15px;
+margin-top:15px;
+border-radius:15px;
+line-height:2;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-
-.dhikr{
-  height:66px;
-  border-radius:18px;
-  border:3px solid #fface0;
-  background:white;
-  color:#ff8ed0;
-  font-size:20px;
-  font-weight:bold;
-  box-shadow:0 0 16px #ffe1f3;
-  position:relative;
-  cursor:pointer;
-}
-
-.dhikr.active{
-  background:#ffeaf7;
-}
-
-.heart{
-  position:absolute;
-  top:-18px;
-  left:-13px;
-  font-size:28px;
-}
-
-.bottom{
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  max-width:430px;
-  margin:auto;
-  height:72px;
-  background:#fffaff;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 24px;
-}
-
-.nav{
-  color:#ff8ed0;
-  font-size:18px;
-  font-weight:bold;
-  background:none;
-  border:0;
-}
-
-.stats{
-  display:none;
-  margin-top:20px;
-  background:#ffeaf7;
-  border:2px solid #ffb6e5;
-  border-radius:20px;
-  padding:16px;
-  font-size:22px;
-  font-weight:bold;
-}
-
-.petal{
-  position:fixed;
-  width:14px;
-  height:20px;
-  background:#ffd0eb;
-  border-radius:70% 30% 70% 30%;
-  pointer-events:none;
-  animation:fly 1.1s ease-out forwards;
-}
-
-@keyframes fly{
-  from{opacity:1;transform:translate(0,0) rotate(0)}
-  to{opacity:0;transform:translate(var(--x),-110px) rotate(90deg)}
+footer{
+text-align:center;
+padding:30px;
+color:#c57a98;
 }
 </style>
 </head>
 
 <body>
 
-<div class="page">
+<header>
+<div class="logo">وردي</div>
+<div class="subtitle">وردك اليومي إلى 1000 🌸</div>
+</header>
 
-  <div class="top">
-    <button class="circle">☾</button>
-    <button class="circle" id="soundBtn" onclick="toggleSound()">🔇</button>
-  </div>
+<div class="counter-box">
+<div id="count">0</div>
+<div>من 1000</div>
+</div>
 
-  <div class="logo">وردي</div>
-  <div class="sub">وردك اليومي إلى 1000</div>
+<div class="buttons">
 
-  <div class="tasbeeh" id="tasbeeh"></div>
+<button class="zikr" onclick="increase()">سبحان الله</button>
 
-  <div class="ring">
-    <div class="label">العدد</div>
-    <div class="count" id="count">0</div>
-    <div class="goal">من 1000</div>
-  </div>
+<button class="zikr" onclick="increase()">الحمد لله</button>
 
-  <button class="main" id="mainBtn" onclick="addDhikr(event)">سبحان الله</button>
+<button class="zikr" onclick="increase()">الله أكبر</button>
 
-  <div class="ayah">﴿فَاذْكُرُونِي أَذْكُرْكُمْ﴾ [البقرة:152]</div>
+<button class="zikr" onclick="increase()">أستغفر الله</button>
 
-  <div class="grid">
-    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>الحمد لله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>الله أكبر</button>
-    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>لا إله إلا الله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>أستغفر الله</button>
-    <button class="dhikr" onclick="chooseDhikr(this)"><span class="heart">💗</span>اللهم صل وسلم على نبينا محمد ﷺ</button>
-    <button class="dhikr active" onclick="chooseDhikr(this)"><span class="heart">💗</span>سبحان الله</button>
-  </div>
+<button class="zikr" onclick="increase()">لا إله إلا الله</button>
 
-  <div class="stats" id="statsBox"></div>
+<button class="zikr" onclick="increase()">اللهم صل وسلم على نبينا محمد ﷺ</button>
 
 </div>
 
-<div class="bottom">
-  <button class="nav" onclick="showStats()">📊<br>إحصائياتي</button>
-  <button class="nav" onclick="resetCounter()">↩<br>تصفير</button>
+<button class="reset" onclick="resetCounter()">تصفير</button>
+
+<div class="section">
+<h2>📖 القرآن الكريم</h2>
+
+<div class="surah">
+<h3>سورة الفاتحة</h3>
+بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ<br>
+الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ<br>
+الرَّحْمَٰنِ الرَّحِيمِ<br>
+مَالِكِ يَوْمِ الدِّينِ<br>
+إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ<br>
+اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ<br>
+صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ
 </div>
+
+<div class="surah">
+<h3>سورة الإخلاص</h3>
+قُلْ هُوَ اللَّهُ أَحَدٌ<br>
+اللَّهُ الصَّمَدُ<br>
+لَمْ يَلِدْ وَلَمْ يُولَدْ<br>
+وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ
+</div>
+
+<div class="surah">
+<h3>سورة الفلق</h3>
+قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ<br>
+مِن شَرِّ مَا خَلَقَ<br>
+وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ<br>
+وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ<br>
+وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ
+</div>
+
+<div class="surah">
+<h3>سورة الناس</h3>
+قُلْ أَعُوذُ بِرَبِّ النَّاسِ<br>
+مَلِكِ النَّاسِ<br>
+إِلَٰهِ النَّاسِ<br>
+مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ<br>
+الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ<br>
+مِنَ الْجِنَّةِ وَالنَّاسِ
+</div>
+
+</div>
+
+<footer>
+🌸 وردي - اجعل الذكر عادة يومية
+</footer>
 
 <script>
-let count = Number(localStorage.getItem("wirdiCount")) || 0;
-let total = Number(localStorage.getItem("wirdiTotal")) || 0;
-let currentDhikr = localStorage.getItem("wirdiDhikr") || "سبحان الله";
-let soundOn = false;
+let count = localStorage.getItem("wardiCount") || 0;
 
-const countEl = document.getElementById("count");
-const mainBtn = document.getElementById("mainBtn");
-const statsBox = document.getElementById("statsBox");
-const soundBtn = document.getElementById("soundBtn");
+document.getElementById("count").innerText = count;
 
-mainBtn.innerText = currentDhikr;
-updateUI();
-makeTasbeeh();
-
-function addDhikr(e){
-  if(count < 1000){
-    count++;
-    total++;
-    localStorage.setItem("wirdiCount", count);
-    localStorage.setItem("wirdiTotal", total);
-    updateUI();
-    makePetals(e);
-
-    if(navigator.vibrate){
-      navigator.vibrate(15);
-    }
-  }
-}
-
-function updateUI(){
-  countEl.innerText = count;
+function increase(){
+count++;
+if(count>1000) count=1000;
+document.getElementById("count").innerText=count;
+localStorage.setItem("wardiCount",count);
 }
 
 function resetCounter(){
-  count = 0;
-  localStorage.setItem("wirdiCount", 0);
-  statsBox.style.display = "none";
-  updateUI();
-}
-
-function chooseDhikr(btn){
-  document.querySelectorAll(".dhikr").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
-  currentDhikr = btn.innerText.replace("💗","").trim();
-  localStorage.setItem("wirdiDhikr", currentDhikr);
-  mainBtn.innerText = currentDhikr;
-}
-
-function showStats(){
-  statsBox.style.display = statsBox.style.display === "block" ? "none" : "block";
-  statsBox.innerHTML =
-    "إجمالي أذكارك: " + total.toLocaleString() + "<br>" +
-    "ورد اليوم: " + count + " / 1000";
-}
-
-function toggleSound(){
-  soundOn = !soundOn;
-  soundBtn.innerText = soundOn ? "🔊" : "🔇";
-}
-
-function makePetals(e){
-  for(let i=0;i<6;i++){
-    const p = document.createElement("span");
-    p.className = "petal";
-    p.style.left = e.clientX + "px";
-    p.style.top = e.clientY + "px";
-    p.style.setProperty("--x",(Math.random()*120-60)+"px");
-    document.body.appendChild(p);
-    setTimeout(()=>p.remove(),1100);
-  }
-}
-
-function makeTasbeeh(){
-  const box = document.getElementById("tasbeeh");
-  for(let i=0;i<26;i++){
-    const b = document.createElement("span");
-    b.className = "bead";
-    const t = i/25;
-    const x = 55 + Math.sin(t*5.2)*55;
-    const y = t*230;
-    b.style.left = x + "px";
-    b.style.top = y + "px";
-    box.appendChild(b);
-  }
-
-  const heart = document.createElement("div");
-  heart.innerText = "💗";
-  heart.style.position = "absolute";
-  heart.style.left = "55px";
-  heart.style.top = "145px";
-  heart.style.fontSize = "38px";
-  box.appendChild(heart);
+count=0;
+document.getElementById("count").innerText=count;
+localStorage.setItem("wardiCount",count);
 }
 </script>
 
