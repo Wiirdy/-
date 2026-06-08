@@ -191,30 +191,6 @@ select{
   </div>
 </section>
 
-<section id="quran" class="page">
-  <div class="top"><h1>القرآن الكريم</h1></div>
-
-  <div class="quran-cover" id="cover">
-    <h2>📖 المصحف</h2>
-    <p>قراءة القرآن كامل داخل الموقع</p>
-    <button class="open-book" onclick="openQuran()">افتحي المصحف</button>
-  </div>
-
-  <div id="bookArea" style="display:none">
-    <select id="surahSelect" onchange="loadSurah(this.value)"></select>
-
-    <div class="book">
-      <h2 id="surahTitle"></h2>
-      <div id="surahText">جاري التحميل...</div>
-
-      <div style="display:flex;gap:10px;justify-content:center;margin-top:25px">
-        <button class="btn" onclick="prevSurah()">السورة السابقة</button>
-        <button class="btn" onclick="nextSurah()">السورة التالية</button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <div class="nav">
   <button class="active" onclick="showPage('home',this)"><span>🏠</span>الرئيسية</button>
   <button onclick="showPage('stats',this)"><span>📊</span>إحصائيات</button>
