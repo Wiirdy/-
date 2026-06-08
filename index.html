@@ -193,6 +193,32 @@ select{
 
 <section id="quran" class="page">
   <div class="top"><h1>القرآن الكريم</h1></div>
+  
+  async function loadSurah(number){
+  currentSurah = Number(number);
+  document.getElementById("surahSelect").value = currentSurah;
+  document.getElementById("surahTitle").innerText =
+    "سورة " + surahNames[currentSurah - 1];
+
+  document.getElementById("surahText").innerHTML = "جاري تحميل السورة...";
+
+  try{
+    const res = await fetch(
+      `https://api.alquran.cloud/v1/surah/${currentSurah}/quran-uthmani`
+    );
+
+    const data = await res.json();
+
+    let ayat = data.data.ayahs.map(a =>
+      `${a.text} <span class="ayah-num">﴿${a.numberInSurah}﴾</span>`
+    ).join(" ");
+
+    document.getElementById("surahText").innerHTML = ayat;
+  }catch{
+    document.getElementById("surahText").innerHTML =
+      "تعذر تحميل القرآن، تأكدي من الاتصال بالإنترنت.";
+  }
+
 
   <div class="quran-cover" id="cover">
     <h2>📖 المصحف</h2>
