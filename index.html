@@ -196,21 +196,22 @@ select{
 
   <div class="quran-cover" id="cover">
     <h2>📖 المصحف</h2>
-    <p>اضغطي للقراءة داخل الموقع</p>
-    <button class="open-book" onclick="openQuran()">افتحي القرآن</button>
+    <p>قراءة القرآن كامل داخل الموقع</p>
+    <button class="open-book" onclick="openQuran()">افتحي المصحف</button>
   </div>
 
   <div id="bookArea" style="display:none">
-    <select onchange="changeSurah(this.value)">
-      <option value="fatiha">سورة الفاتحة</option>
-      <option value="ikhlas">سورة الإخلاص</option>
-      <option value="falaq">سورة الفلق</option>
-      <option value="nas">سورة الناس</option>
-      <option value="kawthar">سورة الكوثر</option>
-      <option value="asr">سورة العصر</option>
-    </select>
+    <select id="surahSelect" onchange="loadSurah(this.value)"></select>
 
-    <div class="book" id="surahText"></div>
+    <div class="book">
+      <h2 id="surahTitle"></h2>
+      <div id="surahText">جاري التحميل...</div>
+
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:25px">
+        <button class="btn" onclick="prevSurah()">السورة السابقة</button>
+        <button class="btn" onclick="nextSurah()">السورة التالية</button>
+      </div>
+    </div>
   </div>
 </section>
 
